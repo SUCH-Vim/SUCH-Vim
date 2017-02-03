@@ -5,6 +5,14 @@
 source ~/.SUCH-Vim/basic/plugins.vim
 
 " ----------------------------------------------------------------
+"  Init personal config
+" ----------------------------------------------------------------
+
+:if filereadable(expand("~/.suchvimrc"))
+:	source ~/.suchvimrc
+:endif
+
+" ----------------------------------------------------------------
 "  Include Basic
 " ----------------------------------------------------------------
 
@@ -19,9 +27,6 @@ source ~/.SUCH-Vim/basic/syntax.vim
 source ~/.SUCH-Vim/languages/python.vim
 source ~/.SUCH-Vim/languages/go.vim
 source ~/.SUCH-Vim/languages/javascript.vim
- 
-" ----------------------------------------------------------------
-"  Init
-" ----------------------------------------------------------------
-
-autocmd VimEnter * NERDTree
+source ~/.SUCH-Vim/languages/css.vim
+source ~/.SUCH-Vim/languages/html.vim
+source ~/.SUCH-Vim/languages/json.vim
