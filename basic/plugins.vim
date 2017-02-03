@@ -14,8 +14,6 @@ Plug 'vim-syntastic/syntastic'
 
 Plug 'mkitt/tabline.vim'
 
-Plug 'editorconfig/editorconfig-vim'
-
 
 " ----------------------------------------------------------------
 "  Motion plugins
