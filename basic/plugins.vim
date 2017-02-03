@@ -16,6 +16,8 @@ Plug 'mkitt/tabline.vim'
 
 Plug 'editorconfig/editorconfig-vim'
 
+Plug 'easymotion/vim-easymotion'
+
 " ----------------------------------------------------------------
 "  Completion plugins
 " ----------------------------------------------------------------
