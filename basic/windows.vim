@@ -1,4 +1,3 @@
-
 nnoremap <leader>wl <C-w>l
 nnoremap <leader>wh <C-w>h
 nnoremap <leader>wj <C-w>j

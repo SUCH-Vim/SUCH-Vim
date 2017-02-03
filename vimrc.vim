@@ -19,6 +19,9 @@ source ~/.SUCH-Vim/basic/syntax.vim
 source ~/.SUCH-Vim/languages/python.vim
 source ~/.SUCH-Vim/languages/go.vim
 source ~/.SUCH-Vim/languages/javascript.vim
+source ~/.SUCH-Vim/languages/css.vim
+source ~/.SUCH-Vim/languages/html.vim
+source ~/.SUCH-Vim/languages/json.vim
  
 " ----------------------------------------------------------------
 "  Init
