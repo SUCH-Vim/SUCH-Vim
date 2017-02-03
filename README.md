@@ -7,18 +7,19 @@ You can develop in your cloned Git repository's directory and execute the ./inst
 # Languages
 |Languages|Feature|Status|
 |---|---|---|
+
 |Python|Completions|&#10004;|
 |Python|Rename|&#10004;|
 |Python|Go to definition|&#10004;|
 |Python|Show documentation|&#10004;|
 |Python|Auto formatting|&#10060;|
-|---|---|---|
+
 |Go|Completions|&#10004;|
 |Go|Rename|&#10004;|
 |Go|Go to definition|&#10004;|
 |Go|Show documentation|&#10004;|
 |Go|Auto formatting|&#10004;|
-|---|---|---|
+
 |Javascript|Completions|&#10004;|
 |Javascript|Rename|&#10004;|
 |Javascript|Go to definition|&#10004;|
