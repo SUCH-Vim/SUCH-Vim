@@ -9,30 +9,30 @@ To do that, we try to have the same keybinding in each languages for similar fea
 |Feature|Keybinding|
 |---|---|
 |Completions|auto|
-|Rename|<leader>r|
-|Go to definition|<leader>g|
-|Show documentation|<leader>d|
+|Rename|`<leader>r`|
+|Go to definition|`<leader>g`|
+|Show documentation|`<leader>d`|
 |Auto formatting|on write|
 
 # Installation
 You can develop in your cloned Git repository's directory and execute the ./install.sh in order to apply changes to your config. A backup of your last config will be created in the $HOME/.vimrc_old file.
 
-The first time you open vim, you have to call Vim-Plug with *:PlugInstall* in order to install all the plugins.
+The first time you open vim, you have to call Vim-Plug with *`:PlugInstall`* in order to install all the plugins.
 
 ### Python
 
 In order to have all the features, you have to install jedi and pylint.
-*pip install jedi* and *pip install pylint*
+*`pip install jedi`* and *`pip install pylint`*
 
 ### Javascript
 
 In order to have all the features, you have to install tern and jslint.
-*npm -g install tern* and *npm -g install jslint*
+*`npm -g install tern`* and *`npm -g install jslint`*
 
 ### Go
 
 In order to have all the features, you have to install gocode, godef, goimports, etc.
-The simplest way to do that is within vim with *:GoInstallBinaries*.
+The simplest way to do that is within vim with *`:GoInstallBinaries`*.
 
 # Motions
 
