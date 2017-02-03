@@ -42,3 +42,7 @@ The simplest way to do that is within vim with *:GoInstallBinaries*.
 |Html|Auto formatting|&#10004;|
 |css|Auto formatting|&#10004;|
 |json|Auto formatting|&#10004;|
+
+# Configuration
+
+You can define your own configuration in the file *~/.suchvimrc*.
