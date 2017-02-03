@@ -1,5 +1,4 @@
 syntax enable
-let mapleader = " "
 set clipboard^=unnamedplus
 set ttimeoutlen=0
 set nu
@@ -22,3 +21,4 @@ set t_Co=256
 colorscheme gruvbox
 set background=dark
 let g:airline#extensions#tabline#enabled = 1
+autocmd VimEnter * NERDTree
