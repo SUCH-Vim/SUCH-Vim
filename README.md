@@ -21,6 +21,17 @@ In order to have all the features, you have to install tern and jslint.
 In order to have all the features, you have to install gocode, godef, goimports, etc.
 The simplest way to do that is within vim with *:GoInstallBinaries*.
 
+# Motions
+
+### Cursor
+
+Jump to anywhere you want with minimal keystrokes, with just one key binding.
+
+Search for a character with : *<Leader>;{char}{label}*.
+Search for n characters with : *<Leader>ss{char}{char}...{char}<Enter>*.
+
+You can also jump to a line with jk : *<Leader>j{char}* and  *<Leader>k{char}*.
+
 # Languages
 |Language|Feature|Status|
 |---|---|---|
