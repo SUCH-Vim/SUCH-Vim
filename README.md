@@ -39,3 +39,10 @@ The simplest way to do that is within vim with *:GoInstallBinaries*.
 |Javascript|Go to definition|&#10004;|
 |Javascript|Show documentation|&#10004;|
 |Javascript|Auto formatting|&#10004;|
+|Html|Auto formatting|&#10004;|
+|css|Auto formatting|&#10004;|
+|json|Auto formatting|&#10004;|
+
+# Configuration
+
+You can define your own configuration in the file *~/.suchvimrc*.
