@@ -1,3 +1,9 @@
+# Install vim-plug if not already installed
+if [ ! -f ~/.vim/autoload/plug.vim]; then
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+# Create backup of the old vim config and the install new config
 [[ -d ~/.SUCH-Vim ]] || mkdir ~/.SUCH-Vim
 if [ -f ~/.vimrc_old ]; then
 	rm ~/.vimrc_old
