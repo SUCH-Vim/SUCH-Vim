@@ -7,8 +7,8 @@ You can develop in your cloned Git repository's directory and execute the ./inst
 # Languages
 |Languages|Feature|Status|
 |---|---|---|
-|Python|Completions|&#10004;|
+|Python|Completions|&#10003;|
 |Python|Rename|&#10004;|
 |Python|Go to definition|&#10004;|
-|Python|Show doc|&#10004;|
-|Python|Auto format|&#10060;|
+|Python|Show documentation|&#10004;|
+|Python|Auto formatting|&#10060;|
