@@ -14,6 +14,8 @@ Plug 'vim-syntastic/syntastic'
 
 Plug 'mkitt/tabline.vim'
 
+Plug 'editorconfig/editorconfig-vim'
+
 " ----------------------------------------------------------------
 "  Completion plugins
 " ----------------------------------------------------------------
@@ -46,4 +48,4 @@ Plug 'ternjs/tern_for_vim'
 
 Plug 'maksimr/vim-jsbeautify'
 
-call plug#end()
+cal plug#end()
