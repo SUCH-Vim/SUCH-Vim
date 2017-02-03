@@ -22,37 +22,19 @@ Plug 'mkitt/tabline.vim'
 Plug 'easymotion/vim-easymotion'
 
 " ----------------------------------------------------------------
-"  Completion plugins
+"  Visual plugins
 " ----------------------------------------------------------------
 
-Plug 'Shougo/neocomplete.vim'
+source ~/.SUCH-Vim/plugins/visual/autocompletion.vim
+source ~/.SUCH-Vim/plugins/visual/helpers.vim
+source ~/.SUCH-Vim/plugins/visual/themes.vim
 
 " ----------------------------------------------------------------
-"  Python plugins
+"  Languages plugins
 " ----------------------------------------------------------------
 
-Plug 'davidhalter/jedi-vim'
-
-Plug 'hynek/vim-python-pep8-indent'
-
-" ----------------------------------------------------------------
-"  Go plugins
-" ----------------------------------------------------------------
-
-Plug 'fatih/vim-go'
-
-" ----------------------------------------------------------------
-"  Javascript plugins
-" ----------------------------------------------------------------
-
-Plug 'pangloss/vim-javascript'
-
-Plug 'mxw/vim-jsx'
-
-Plug 'leshill/vim-json'
-
-Plug 'ternjs/tern_for_vim'
-
-Plug 'maksimr/vim-jsbeautify'
+source ~/.SUCH-Vim/plugins/languages/python.vim
+source ~/.SUCH-Vim/plugins/languages/go.vim
+source ~/.SUCH-Vim/plugins/languages/javascript.vim
 
 call plug#end()

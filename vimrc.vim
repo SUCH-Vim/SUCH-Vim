@@ -2,7 +2,7 @@
 "  Include Plugins
 " ----------------------------------------------------------------
 
-source ~/.SUCH-Vim/basic/plugins.vim
+source ~/.SUCH-Vim/plugins/plugins.vim
 
 " ----------------------------------------------------------------
 "  Init personal config
@@ -13,26 +13,7 @@ source ~/.SUCH-Vim/basic/plugins.vim
 :endif
 
 " ----------------------------------------------------------------
-"  Include Basic
+"  Include config
 " ----------------------------------------------------------------
 
-source ~/.SUCH-Vim/basic/practical.vim
-source ~/.SUCH-Vim/basic/syntax.vim
-
-" ----------------------------------------------------------------
-"  Include Motions
-" ----------------------------------------------------------------
-"
-source ~/.SUCH-Vim/motions/windows.vim
-source ~/.SUCH-Vim/motions/cursor.vim
-
-" ----------------------------------------------------------------
-"  Include Languages
-" ----------------------------------------------------------------
-
-source ~/.SUCH-Vim/languages/python.vim
-source ~/.SUCH-Vim/languages/go.vim
-source ~/.SUCH-Vim/languages/javascript.vim
-source ~/.SUCH-Vim/languages/css.vim
-source ~/.SUCH-Vim/languages/html.vim
-source ~/.SUCH-Vim/languages/json.vim
+source ~/.SUCH-Vim/config/config.vim
