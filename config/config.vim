@@ -4,7 +4,13 @@
 
 source ~/.SUCH-Vim/config/basic/practical.vim
 source ~/.SUCH-Vim/config/basic/syntax.vim
-source ~/.SUCH-Vim/config/basic/windows.vim
+
+" ----------------------------------------------------------------
+"  Include Motions
+" ----------------------------------------------------------------
+
+source ~/.SUCH-Vim/config/motions/windows.vim
+source ~/.SUCH-Vim/config/motions/cursor.vim
 
 " ----------------------------------------------------------------
 "  Include Languages
