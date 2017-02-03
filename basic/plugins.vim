@@ -35,6 +35,8 @@ Plug 'Shougo/neocomplete.vim'
 
 Plug 'davidhalter/jedi-vim'
 
+Plug 'hynek/vim-python-pep8-indent'
+
 " ----------------------------------------------------------------
 "  Go plugins
 " ----------------------------------------------------------------
