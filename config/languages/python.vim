@@ -1,7 +1,6 @@
-let g:jedi#goto_definitions_command = "<leader>pg"
-let g:jedi#documentation_command = "<leader>pd"
-let g:jedi#usages_command = "<leader>pn"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#rename_command = "<leader>pr"
-let g:jedi#force_py_version = 3
-let g:pymode_indent = 0 
+autocmd FileType python let g:jedi#goto_definitions_command = "<leader>g"
+autocmd FileType python let g:jedi#documentation_command = "<leader>d"
+autocmd FileType python let g:jedi#usages_command = "<leader>n"
+autocmd FileType python let g:jedi#rename_command = "<leader>r"
+autocmd FileType python let g:jedi#force_py_version = 3
+autocmd FileType python let g:pymode_indent = 0 
