@@ -23,11 +23,12 @@ colorscheme gruvbox
 set background=dark
 let g:airline#extensions#tabline#enabled = 1
 
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " ----------------------------------------------------------------
 "  Easymotion Setup
 " ----------------------------------------------------------------
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 
