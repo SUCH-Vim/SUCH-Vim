@@ -1,6 +1,19 @@
 # SUCH-Vim
 A Super User's Configuration for Handling Vim
 
+# Goal
+
+The goal is to have a stable, clean, intuitive configuration of vim.
+To do that, we try to have the same keybinding in each languages for similar features.
+
+|Feature|Keybinding|
+|---|---|
+|Completions|auto|
+|Rename|<leader>r|
+|Go to definition|<leader>g|
+|Show documentation|<leader>d|
+|Auto formatting|on write|
+
 # Installation
 You can develop in your cloned Git repository's directory and execute the ./install.sh in order to apply changes to your config. A backup of your last config will be created in the $HOME/.vimrc_old file.
 
