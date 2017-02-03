@@ -9,9 +9,14 @@ source ~/.SUCH-Vim/basic/plugins.vim
 " ----------------------------------------------------------------
 
 source ~/.SUCH-Vim/basic/practical.vim
-source ~/.SUCH-Vim/basic/windows.vim
 source ~/.SUCH-Vim/basic/syntax.vim
-source ~/.SUCH-Vim/basic/motion.vim
+
+" ----------------------------------------------------------------
+"  Include Motions
+" ----------------------------------------------------------------
+"
+source ~/.SUCH-Vim/motions/windows.vim
+source ~/.SUCH-Vim/motions/cursor.vim
 
 " ----------------------------------------------------------------
 "  Include Languages
