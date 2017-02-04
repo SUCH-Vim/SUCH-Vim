@@ -34,6 +34,11 @@ In order to have all the features, you have to install tern and jslint.
 In order to have all the features, you have to install gocode, godef, goimports, etc.
 The simplest way to do that is within vim with *`:GoInstallBinaries`*.
 
+# Buffers 
+
+Toggle nerdtree : *`<Leader>tt`*
+Fuzzy search files : *`<Leader>ff`*
+
 # Motions
 
 ### Cursor

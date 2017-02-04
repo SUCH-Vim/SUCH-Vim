@@ -27,5 +27,5 @@ source ~/.SUCH-Vim/config/languages/json.vim
 "  Include Environment
 " ----------------------------------------------------------------
 "
-source ~/.SUCH-Vim/config/environment/nerdtree.vim
+source ~/.SUCH-Vim/config/environment/buffer.vim
 
