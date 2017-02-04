@@ -22,6 +22,7 @@ source ~/.SUCH-Vim/config/languages/javascript.vim
 source ~/.SUCH-Vim/config/languages/css.vim
 source ~/.SUCH-Vim/config/languages/html.vim
 source ~/.SUCH-Vim/config/languages/json.vim
+source ~/.SUCH-Vim/config/languages/c.vim
 
 " ----------------------------------------------------------------
 "  Include Environment

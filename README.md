@@ -34,6 +34,11 @@ In order to have all the features, you have to install tern and jslint.
 In order to have all the features, you have to install gocode, godef, goimports, etc.
 The simplest way to do that is within vim with *`:GoInstallBinaries`*.
 
+### C, C++, C# and Java
+
+In order to have formatting features, you have to install astyle. 
+You can find it in your distribution packet manager.
+
 # Buffers 
 
 Toggle nerdtree : *`<Leader>tt`*
@@ -59,6 +64,11 @@ You can also jump to a line with jk : *`<Leader>j{char}`* and  *`<Leader>k{char}
 |Python|Go to definition|&#10004;|
 |Python|Show documentation|&#10004;|
 |Python|Auto formatting|&#10004;|
+|C|Completions|&#10060;|
+|C|Rename|&#10060;|
+|C|Go to definition|&#10060;|
+|C|Show documentation|&#10060;|
+|C|Auto formatting|&#10004;|
 |Go|Completions|&#10004;|
 |Go|Rename|&#10004;|
 |Go|Go to definition|&#10004;|
