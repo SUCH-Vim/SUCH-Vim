@@ -53,7 +53,7 @@ You can also jump to a line with jk : *`<Leader>j{char}`* and  *`<Leader>k{char}
 |Python|Rename|&#10004;|
 |Python|Go to definition|&#10004;|
 |Python|Show documentation|&#10004;|
-|Python|Auto formatting|&#10060;|
+|Python|Auto formatting|&#10004;|
 |Go|Completions|&#10004;|
 |Go|Rename|&#10004;|
 |Go|Go to definition|&#10004;|

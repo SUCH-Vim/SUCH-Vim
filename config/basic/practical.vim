@@ -1,4 +1,5 @@
 syntax enable
+set tabstop=4 shiftwidth=4 expandtab
 set clipboard^=unnamedplus
 set ttimeoutlen=0
 set nu

@@ -1,3 +1,3 @@
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
-Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
+Plug 'python-mode/python-mode', { 'for': 'python' }
