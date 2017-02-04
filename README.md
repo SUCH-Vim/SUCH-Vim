@@ -64,6 +64,11 @@ You can also jump to a line with jk : *`<Leader>j{char}`* and  *`<Leader>k{char}
 |Python|Go to definition|&#10004;|
 |Python|Show documentation|&#10004;|
 |Python|Auto formatting|&#10004;|
+|C|Completions|&#10060;|
+|C|Rename|&#10060;|
+|C|Go to definition|&#10060;|
+|C|Show documentation|&#10060;|
+|C|Auto formatting|&#10004;|
 |Go|Completions|&#10004;|
 |Go|Rename|&#10004;|
 |Go|Go to definition|&#10004;|
@@ -77,7 +82,6 @@ You can also jump to a line with jk : *`<Leader>j{char}`* and  *`<Leader>k{char}
 |Html|Auto formatting|&#10004;|
 |css|Auto formatting|&#10004;|
 |json|Auto formatting|&#10004;|
-|C|Auto formatting|&#10004;|
 
 # Configuration
 
