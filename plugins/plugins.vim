@@ -8,12 +8,18 @@ Plug 'morhetz/gruvbox'
 
 Plug 'vim-airline/vim-airline'
 
-Plug 'scrooloose/nerdtree'
-
 Plug 'vim-syntastic/syntastic'
 
 Plug 'mkitt/tabline.vim'
 
+
+" ----------------------------------------------------------------
+"  Buffer plugins
+" ----------------------------------------------------------------
+
+Plug 'scrooloose/nerdtree'
+
+Plug 'ctrlpvim/ctrlp.vim'
 
 " ----------------------------------------------------------------
 "  Motion plugins
