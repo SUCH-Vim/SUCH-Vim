@@ -1,31 +1,16 @@
 call plug#begin('~/.vim/plugged')
 
 " ----------------------------------------------------------------
-"  UI plugins
+"  Environment plugins
 " ----------------------------------------------------------------
 
-Plug 'morhetz/gruvbox'
-
-Plug 'vim-airline/vim-airline'
-
-Plug 'vim-syntastic/syntastic'
-
-Plug 'mkitt/tabline.vim'
-
-
-" ----------------------------------------------------------------
-"  Buffer plugins
-" ----------------------------------------------------------------
-
-Plug 'scrooloose/nerdtree'
-
-Plug 'ctrlpvim/ctrlp.vim'
+source ~/.SUCH-Vim/plugins/environment/buffer.vim
 
 " ----------------------------------------------------------------
 "  Motion plugins
 " ----------------------------------------------------------------
 
-Plug 'easymotion/vim-easymotion'
+source ~/.SUCH-Vim/plugins/motions/cursor.vim
 
 " ----------------------------------------------------------------
 "  Visual plugins
