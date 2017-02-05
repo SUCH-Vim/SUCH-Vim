@@ -42,6 +42,7 @@ You can find it in your distribution packet manager.
 # Buffers 
 
 Toggle nerdtree : *`<Leader>tt`*
+
 Fuzzy search files : *`<Leader>ff`*
 
 # Motions
