@@ -2,7 +2,7 @@ Plug 'altercation/vim-colors-solarized'
 
 Plug 'tomasr/molokai'
 
-Plug 'chriskempson/base16-vim'
+Plug 'jacoborus/tender.vim'
 
 Plug 'nanotech/jellybeans.vim'
 
