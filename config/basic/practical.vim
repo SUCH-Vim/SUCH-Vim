@@ -19,7 +19,5 @@ let g:neocomplete#enable_at_startup = 1
 
 let base16colorspace=256
 set t_Co=256
-colorscheme gruvbox
 set background=dark
 let g:airline#extensions#tabline#enabled = 1
-autocmd VimEnter * NERDTree
