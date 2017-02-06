@@ -14,4 +14,4 @@ Plug 'chriskempson/vim-tomorrow-theme'
 
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'nasim80/Vim-Theme-Switcher'
+Plug 'nasim80/vim-theme-switcher'
