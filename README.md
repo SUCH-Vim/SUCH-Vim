@@ -24,6 +24,9 @@ The first time you open vim, you have to call Vim-Plug with *`:PlugInstall`* in 
 In order to have all the features, you have to install jedi and pylint.
 *`pip install jedi`* and *`pip install pylint`*
 
+Disable Rope project lookup in your .suchvimrc with 
+*`let g:pymode_rope_lookup_project = 0`* if you're not working in a Rope project structure, otherwise it will cause Vim to hang on save.
+
 ### Javascript
 
 In order to have all the features, you have to install tern and jslint.
