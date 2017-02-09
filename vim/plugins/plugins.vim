@@ -4,28 +4,28 @@ call plug#begin('~/.vim/plugged')
 "  Environment plugins
 " ----------------------------------------------------------------
 
-source ~/.SUCH-Vim/plugins/environment/buffer.vim
+source ~/.SUCH-Vim/vim/plugins/environment/buffer.vim
 
 " ----------------------------------------------------------------
 "  Motion plugins
 " ----------------------------------------------------------------
 
-source ~/.SUCH-Vim/plugins/motions/cursor.vim
+source ~/.SUCH-Vim/vim/plugins/motions/cursor.vim
 
 " ----------------------------------------------------------------
 "  Visual plugins
 " ----------------------------------------------------------------
 
-source ~/.SUCH-Vim/plugins/visual/autocompletion.vim
-source ~/.SUCH-Vim/plugins/visual/helpers.vim
-source ~/.SUCH-Vim/plugins/visual/themes.vim
+source ~/.SUCH-Vim/vim/plugins/visual/autocompletion.vim
+source ~/.SUCH-Vim/vim/plugins/visual/helpers.vim
+source ~/.SUCH-Vim/vim/plugins/visual/themes.vim
 
 " ----------------------------------------------------------------
 "  Languages plugins
 " ----------------------------------------------------------------
 
-source ~/.SUCH-Vim/plugins/languages/python.vim
-source ~/.SUCH-Vim/plugins/languages/go.vim
-source ~/.SUCH-Vim/plugins/languages/javascript.vim
+source ~/.SUCH-Vim/vim/plugins/languages/python.vim
+source ~/.SUCH-Vim/vim/plugins/languages/go.vim
+source ~/.SUCH-Vim/vim/plugins/languages/javascript.vim
 
 call plug#end()
