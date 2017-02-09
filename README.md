@@ -21,8 +21,8 @@ The first time you open vim, you have to call Vim-Plug with *`:PlugInstall`* in 
 
 ### Python
 
-In order to have all the features, you have to install jedi and pylint.
-*`pip install jedi`* and *`pip install pylint`*
+In order to have all the features, you have to install jedi, yapf and pylint.
+*`pip install jedi`, `pip install yapf`* and *`pip install pylint`*
 
 ### Javascript
 
