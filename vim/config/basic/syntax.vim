@@ -6,3 +6,5 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_go_checkers = ['go']
+let g:syntastic_c_checkers = ['clang_check']
+let g:syntastic_c_clang_check_post_args = ""
