@@ -14,3 +14,6 @@ let base16colorspace=256
 set t_Co=256
 set background=dark
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:Powerline_sybols = 'unicode'
+let g:airline#extensions#tabline#buffer_nr_show = 1
