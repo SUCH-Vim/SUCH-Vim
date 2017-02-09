@@ -4,8 +4,12 @@
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd CursorHold,CursorHoldI * if (exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1)
-            \| call NERDTreeFocus() | call g:NERDTree.ForCurrentTab().getRoot().refresh() 
-            \| call g:NERDTree.ForCurrentTab().render() | wincmd w | endif
+            \| if (bufname("%") != "NERD_tree_1") | call NERDTreeFocus()
+            \| call g:NERDTree.ForCurrentTab().getRoot().refresh() 
+            \| call g:NERDTree.ForCurrentTab().render() | wincmd w | else 
+            \| call g:NERDTree.ForCurrentTab().getRoot().refresh()
+            \| call g:NERDTree.ForCurrentTab().render()
+            \| endif | endif
 nnoremap <leader>tt :NERDTreeToggle<CR>
 
 " ----------------------------------------------------------------
