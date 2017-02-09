@@ -3,6 +3,7 @@
 " ----------------------------------------------------------------
 source ~/.SUCH-Vim/nvim/config/basic/practical.vim
 source ~/.SUCH-Vim/nvim/config/basic/syntax.vim
+source ~/.SUCH-Vim/nvim/config/basic/terminal.vim
 
 " -----------------------------------------------------------------
 "  Include Motions
