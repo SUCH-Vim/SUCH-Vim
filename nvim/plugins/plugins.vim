@@ -6,13 +6,13 @@ Plug 'neovim/neovim'
 "  Environment plugins
 " ----------------------------------------------------------------
 
-source ~/.SUCH-Vim/nvim/plugins/environment/buffer.vim
+source ~/.SUCH-Vim/vim/plugins/environment/buffer.vim
 
 " -----------------------------------------------------------------
 "  Motion plugins
 " -----------------------------------------------------------------
 
-source ~/.SUCH-Vim/nvim/plugins/motions/cursor.vim
+source ~/.SUCH-Vim/vim/plugins/motions/cursor.vim
 
 " -----------------------------------------------------------------
 "  Visual plugins
