@@ -24,3 +24,4 @@ source ~/.SUCH-Vim/common/plugins/visual/themes.vim
 source ~/.SUCH-Vim/common/plugins/languages/python.vim
 source ~/.SUCH-Vim/common/plugins/languages/go.vim
 source ~/.SUCH-Vim/common/plugins/languages/javascript.vim
+source ~/.SUCH-Vim/common/plugins/languages/latex.vim
