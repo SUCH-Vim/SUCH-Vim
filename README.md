@@ -24,6 +24,8 @@ The first time you open vim, you have to call Vim-Plug with *`:PlugInstall`* in 
 In order to have all the features, you have to install jedi, yapf and pylint.
 *`pip install jedi`, `pip install yapf`* and *`pip install pylint`*
 
+If you want to use neovim: `pip install neovim`
+
 ### Javascript
 
 In order to have all the features, you have to install tern and jslint.

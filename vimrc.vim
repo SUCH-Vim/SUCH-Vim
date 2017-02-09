@@ -2,7 +2,11 @@
 "  Include Plugins
 " ----------------------------------------------------------------
 
-source ~/.SUCH-Vim/plugins/plugins.vim
+if has("nvim")
+    source ~/.SUCH-Vim/nvim/plugins/plugins.vim
+else
+    source ~/.SUCH-Vim/vim/plugins/plugins.vim
+endif
 
 " ----------------------------------------------------------------
 "  Init personal config
@@ -16,4 +20,8 @@ source ~/.SUCH-Vim/plugins/plugins.vim
 "  Include config
 " ----------------------------------------------------------------
 
-source ~/.SUCH-Vim/config/config.vim
+if has("nvim")
+    source ~/.SUCH-Vim/nvim/config/config.vim
+else
+    source ~/.SUCH-Vim/vim/config/config.vim
+endif

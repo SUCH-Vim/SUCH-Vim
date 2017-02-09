@@ -11,6 +11,8 @@ nnoremap <leader>wb <C-w>S
 nnoremap <leader>wq :q<Enter>
 nnoremap <leader>wrl :vertical resize +5<Enter>
 nnoremap <leader>wrh :vertical resize -5<Enter>
+nnoremap <leader>wrj :res +5<Enter>
+nnoremap <leader>wrk :res -5<Enter>
 nnoremap <leader>wr<Right> :vertical resize +5<Enter>
 nnoremap <leader>wr<Left> :vertical resize -5<Enter>
 nnoremap <leader>wml <C-w>L 
