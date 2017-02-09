@@ -9,10 +9,8 @@ autocmd FileType python let g:jedi#rename_command = "<leader>r"
 autocmd FileType python let g:jedi#force_py_version = 3
 
 " ----------------------------------------------------------------
-"  Python-Mode config
+"  Yapf config
 " ----------------------------------------------------------------
-
-autocmd FileType python autocmd BufWritePre <buffer> :PymodeLintAuto
-let g:pymode_python = 'python3'
-let g:pymode_rope = 0
-let g:pymode_folding = 0
+  
+autocmd FileType python autocmd BufWritePre <buffer> :0,$!yapf
+autocmd FileType python nnoremap <buffer> <leader>f :0,$!yapf<Cr><C-o>

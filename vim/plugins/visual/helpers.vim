@@ -4,4 +4,6 @@ Plug 'vim-syntastic/syntastic'
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'yggdroot/indentline'
+
 
