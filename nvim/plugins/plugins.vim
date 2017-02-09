@@ -20,14 +20,14 @@ source ~/.SUCH-Vim/nvim/plugins/motions/cursor.vim
 
 source ~/.SUCH-Vim/nvim/plugins/visual/autocompletion.vim
 source ~/.SUCH-Vim/nvim/plugins/visual/helpers.vim
-source ~/.SUCH-Vim/nvim/plugins/visual/themes.vim
+source ~/.SUCH-Vim/vim/plugins/visual/themes.vim
 
 " -----------------------------------------------------------------
 "  Languages pluginnv
 " -----------------------------------------------------------------
 
-source ~/.SUCH-Vim/nvim/plugins/languages/python.vim
+source ~/.SUCH-Vim/vim/plugins/languages/python.vim
 source ~/.SUCH-Vim/nvim/plugins/languages/go.vim
-source ~/.SUCH-Vim/nvim/plugins/languages/javascript.vim
+source ~/.SUCH-Vim/vim/plugins/languages/javascript.vim
 
 call plug#end()

@@ -8,14 +8,14 @@ source ~/.SUCH-Vim/nvim/config/basic/syntax.vim
 "  Include Motions
 " -----------------------------------------------------------------
 
-source ~/.SUCH-Vim/nvim/config/motions/windows.vim
-source ~/.SUCH-Vim/nvim/config/motions/cursor.vim
+source ~/.SUCH-Vim/vim/config/motions/windows.vim
+source ~/.SUCH-Vim/vim/config/motions/cursor.vim
 
 " -----------------------------------------------------------------
 "  Include Languagenv
 " -----------------------------------------------------------------
 
-source ~/.SUCH-Vim/nvim/config/languages/python.vim
+source ~/.SUCH-Vim/vim/config/languages/python.vim
 source ~/.SUCH-Vim/nvim/config/languages/go.vim
 source ~/.SUCH-Vim/nvim/config/languages/javascript.vim
 source ~/.SUCH-Vim/nvim/config/languages/css.vim
@@ -27,5 +27,5 @@ source ~/.SUCH-Vim/nvim/config/languages/c.vim
 "  Include Environment
 " ----------------------------------------------------------------
 "
-source ~/.SUCH-Vim/nvim/config/environment/buffer.vim
+source ~/.SUCH-Vim/vim/config/environment/buffer.vim
 
