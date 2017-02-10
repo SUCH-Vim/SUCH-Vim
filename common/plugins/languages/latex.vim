@@ -1,1 +1,2 @@
-Plug 'lervag/vimtex'
+Plug 'lervag/vimtex', { 'for': 'tex' }
+
