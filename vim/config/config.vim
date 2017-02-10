@@ -10,3 +10,10 @@ source ~/.SUCH-Vim/common/config/config.vim
 
 source ~/.SUCH-Vim/vim/config/basic/practical.vim
 source ~/.SUCH-Vim/vim/config/basic/syntax.vim
+
+" ----------------------------------------------------------------
+"  Include languages
+" ----------------------------------------------------------------
+
+source ~/.SUCH-Vim/vim/config/languages/c.vim
+
