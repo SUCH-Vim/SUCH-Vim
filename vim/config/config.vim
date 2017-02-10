@@ -16,3 +16,4 @@ source ~/.SUCH-Vim/vim/config/basic/syntax.vim
 " ----------------------------------------------------------------
 
 source ~/.SUCH-Vim/vim/config/languages/latex.vim
+source ~/.SUCH-Vim/vim/config/languages/c.vim

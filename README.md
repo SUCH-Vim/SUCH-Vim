@@ -24,7 +24,7 @@ The first time you open vim, you have to call Vim-Plug with *`:PlugInstall`* in 
 ### Python
 
 In order to have all the features, you have to install jedi, yapf and pylint.
-*`pip install jedi`, `pip install yapf`* and *`pip install pylint`*
+*`pip install jedi`*, *`pip install yapf`* and *`pip install pylint`*
 
 If you want to use neovim: `pip install neovim`
 
@@ -38,10 +38,12 @@ In order to have all the features, you have to install tern and jslint.
 In order to have all the features, you have to install gocode, godef, goimports, etc.
 The simplest way to do that is within vim with *`:GoInstallBinaries`*.
 
-### C, C++, C# and Java
+### C, C++ 
 
-In order to have formatting features, you have to install astyle. 
-You can find it in your distribution packet manager.
+In order to have formatting features, you have to install *`astyle`* and *`clang-check`*. 
+You can find them in your distribution packet manager.
+
+Clang-Check uses Compilation database (https://clang.llvm.org/docs/JSONCompilationDatabase.html) in order to figure out specific build options for each file. You can generate those using CMake or Build EAR (bear) (for non-CMake project) that can be find in your distribution packet manager.
 
 ### LaTeX
 
@@ -85,21 +87,25 @@ You can also jump to a line with jk : *`<Leader>j{char}`* and  *`<Leader>k{char}
 |Python|Go to definition|&#10004;|
 |Python|Show documentation|&#10004;|
 |Python|Auto formatting|&#10004;|
-|C|Completions|&#10060;|
+|Python|Syntax checking|&#10004;|
+|C|Completions|&#10004;|
 |C|Rename|&#10060;|
 |C|Go to definition|&#10060;|
 |C|Show documentation|&#10060;|
 |C|Auto formatting|&#10004;|
+|C|Syntax checking|&#10004;|
 |Go|Completions|&#10004;|
 |Go|Rename|&#10004;|
 |Go|Go to definition|&#10004;|
 |Go|Show documentation|&#10004;|
 |Go|Auto formatting|&#10004;|
+|Go|Syntax checking|&#10004;|
 |Javascript|Completions|&#10004;|
 |Javascript|Rename|&#10004;|
 |Javascript|Go to definition|&#10004;|
 |Javascript|Show documentation|&#10004;|
 |Javascript|Auto formatting|&#10004;|
+|Javascript|Syntax checking|&#10004;|
 |Html|Auto formatting|&#10004;|
 |css|Auto formatting|&#10004;|
 |json|Auto formatting|&#10004;|
