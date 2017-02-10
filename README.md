@@ -70,7 +70,7 @@ You can also jump to a line with jk : *`<Leader>j{char}`* and  *`<Leader>k{char}
 |Python|Show documentation|&#10004;|
 |Python|Auto formatting|&#10004;|
 |Python|Syntax checking|&#10004;|
-|C|Completions|&#10060;|
+|C|Completions|&#10004;|
 |C|Rename|&#10060;|
 |C|Go to definition|&#10060;|
 |C|Show documentation|&#10060;|
