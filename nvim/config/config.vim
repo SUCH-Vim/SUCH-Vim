@@ -18,3 +18,4 @@ source ~/.SUCH-Vim/nvim/config/basic/terminal.vim
 " -----------------------------------------------------------------
 
 source ~/.SUCH-Vim/nvim/config/languages/go.vim
+source ~/.SUCH-Vim/nvim/config/languages/c.vim

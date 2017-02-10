@@ -1,0 +1,1 @@
+Plug 'zchee/deoplete-clang'

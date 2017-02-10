@@ -19,5 +19,6 @@ source ~/.SUCH-Vim/nvim/plugins/visual/helpers.vim
 
 source ~/.SUCH-Vim/nvim/plugins/languages/go.vim
 source ~/.SUCH-Vim/nvim/plugins/languages/javascript.vim
+source ~/.SUCH-Vim/nvim/plugins/languages/c.vim
 
 call plug#end()
