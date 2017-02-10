@@ -26,6 +26,9 @@ In order to have all the features, you have to install jedi, yapf and pylint.
 
 If you want to use neovim: `pip install neovim`
 
+Disable Rope project lookup in your .suchvimrc with 
+*`let g:pymode_rope_lookup_project = 0`* if you're not working in a Rope project structure, otherwise it will cause Vim to hang on save.
+
 ### Javascript
 
 In order to have all the features, you have to install tern and jslint.
