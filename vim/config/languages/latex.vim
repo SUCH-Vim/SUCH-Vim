@@ -1,3 +1,7 @@
+" ----------------------------------------------------------------
+"  Autocompletion Vimtex config
+" ----------------------------------------------------------------
+
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
 endif

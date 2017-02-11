@@ -1,3 +1,7 @@
+" ----------------------------------------------------------------
+"  Autocompletion Vimtex config
+" ----------------------------------------------------------------
+
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
 endif
@@ -11,5 +15,3 @@ let g:deoplete#omni#input_patterns.tex = '\\(?:'
     \ . '|includepdf(\s*\[[^]]*\])?\s*\{[^}]*'
     \ . '|includestandalone(\s*\[[^]]*\])?\s*\{[^}]*'
     \ .')'
-
-

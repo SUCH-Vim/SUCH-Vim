@@ -29,4 +29,3 @@ source ~/.SUCH-Vim/common/config/languages/latex.vim
 " ----------------------------------------------------------------
 "
 source ~/.SUCH-Vim/common/config/environment/buffer.vim
-
