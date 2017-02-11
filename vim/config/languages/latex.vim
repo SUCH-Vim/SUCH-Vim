@@ -16,5 +16,3 @@ let g:neocomplete#sources#omni#input_patterns.tex =
     \ . '|includepdf%(\s*\[[^]]*\])?\s*\{[^}]*'
     \ . '|includestandalone%(\s*\[[^]]*\])?\s*\{[^}]*'
         \ . ')'
-
-
