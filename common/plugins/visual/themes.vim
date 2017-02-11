@@ -1,5 +1,7 @@
 Plug 'altercation/vim-colors-solarized'
 
+Plug 'joshdick/onedark.vim'
+
 Plug 'tomasr/molokai'
 
 Plug 'jacoborus/tender.vim'
