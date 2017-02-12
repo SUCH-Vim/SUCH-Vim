@@ -28,4 +28,4 @@ source ~/.SUCH-Vim/common/config/languages/c.vim
 " ----------------------------------------------------------------
 "
 source ~/.SUCH-Vim/common/config/environment/buffer.vim
-
+source ~/.SUCH-Vim/common/config/environment/spell-checker.vim

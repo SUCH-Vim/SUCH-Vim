@@ -2,7 +2,7 @@
 A Super User's Configuration for Handling Vim
 # Goal
 The goal is to have a stable, clean, intuitive configuration of vim.
-To do that, we try to have the same keybinding in each languages for similar features.
+To do that, we try to have the same key binding in each languages for similar features.
 
 |Feature|Keybinding|
 |---|---|
