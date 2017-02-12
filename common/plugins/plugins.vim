@@ -3,6 +3,7 @@
 " ----------------------------------------------------------------
 
 source ~/.SUCH-Vim/common/plugins/environment/buffer.vim
+source ~/.SUCH-Vim/common/plugins/environment/spell-checker.vim
 
 " ----------------------------------------------------------------
 "  Motion plugins
@@ -27,3 +28,4 @@ source ~/.SUCH-Vim/common/plugins/languages/go.vim
 source ~/.SUCH-Vim/common/plugins/languages/javascript.vim
 source ~/.SUCH-Vim/common/plugins/languages/latex.vim
 source ~/.SUCH-Vim/common/plugins/languages/c.vim
+source ~/.SUCH-Vim/common/plugins/languages/markdown.vim

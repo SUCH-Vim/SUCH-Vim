@@ -1,16 +1,8 @@
-Plug 'altercation/vim-colors-solarized'
+Plug 'flazz/vim-colorschemes'
 
-Plug 'tomasr/molokai'
+Plug 'fneu/breezy'
 
-Plug 'jacoborus/tender.vim'
-
-Plug 'nanotech/jellybeans.vim'
-
-Plug 'morhetz/gruvbox'
-
-Plug 'w0ng/vim-hybrid'
-
-Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'joshdick/onedark.vim'
 
 Plug 'vim-airline/vim-airline-themes'
 

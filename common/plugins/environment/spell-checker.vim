@@ -1,0 +1,1 @@
+Plug 'reedes/vim-lexical'

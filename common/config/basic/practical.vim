@@ -10,8 +10,7 @@ set nowrap
 "  UI Setup
 " ----------------------------------------------------------------
 
-let base16colorspace=256
-set t_Co=256
+set termguicolors
 set background=dark
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
