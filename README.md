@@ -13,9 +13,7 @@ To do that, we try to have the same key binding in each languages for similar fe
 |Go to definition|`<leader>g`|
 |Show documentation|`<leader>d`|
 |Auto formatting|on write|
-
 # Installation
-
 You can develop in your cloned Git repository's directory and execute the ./install.sh in order to apply changes to your config. A backup of your last config will be created in the $HOME/.vimrc_old file.
 
 The first time you open vim, you have to call Vim-Plug with *`:PlugInstall`* in order to install all the plugins.
@@ -80,13 +78,19 @@ You can find them in your distribution packet manager.
 
 Clang-Check uses Compilation database (https://clang.llvm.org/docs/JSONCompilationDatabase.html) in order to figure out specific build options for each file. You can generate those using CMake or Build EAR (bear) (for non-CMake project) that can be find in your distribution packet manager.
 
-### LaTeX
-
 |Feature|Status|
 |---|---|
 |Completions|&#10004;|
 |Rename|&#10060;|
-
+|Go to definition|&#10060;|
+|Show documentation|&#10060;|
+|Auto formatting|&#10004;|
+|Syntax checking|&#10004;|
+### LaTeX
+|Feature|Status|
+|---|---|
+|Completions|&#10004;|
+|Rename|&#10060;|
 |Go to definition|&#10060;|
 |Show documentation|&#10060;|
 |Auto formatting|&#10060;|
@@ -96,7 +100,6 @@ Clang-Check uses Compilation database (https://clang.llvm.org/docs/JSONCompilati
 
 You can format a paragraph by selecting it and use the `<leader>f`.
 Ex: Put your cursor at the begining of the paragraph and do `*line number of paragraph*<leader>f`
-
 # Buffers 
 Toggle nerdtree : *`<Leader>tt`*
 

@@ -12,5 +12,5 @@ let g:vimtex_latexmk_continuous=0
 :endfunction
 
 autocmd FileType tex noremap <buffer> <leader>f gq<Enter>
-autocmd FileType tex noremap <buffer> <leader>r :call BuildAndView()<cr>
+autocmd FileType tex noremap <buffer> <leader>R :call BuildAndView()<cr>
 autocmd FileType tex noremap <buffer> <leader>b :VimtexCompile<cr>
