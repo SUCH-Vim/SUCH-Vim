@@ -11,6 +11,7 @@ source ~/.SUCH-Vim/common/config/config.vim
 source ~/.SUCH-Vim/nvim/config/basic/practical.vim
 source ~/.SUCH-Vim/nvim/config/basic/syntax.vim
 source ~/.SUCH-Vim/nvim/config/basic/terminal.vim
+source ~/.SUCH-Vim/nvim/config/languages/latex.vim
 
 
 " -----------------------------------------------------------------
