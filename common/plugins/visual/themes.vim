@@ -2,7 +2,7 @@ Plug 'flazz/vim-colorschemes'
 
 Plug 'fneu/breezy'
 
-Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
 
 Plug 'vim-airline/vim-airline-themes'
 
