@@ -1,0 +1,7 @@
+# Test case
+Execute (test assertion):
+  source ~/.SUCH-Vim/suchvim/helpers/dependancies.vim
+  let programs = []
+  call add(programs, "vim")
+  call SUCHVim_check_dependancie("vim")
+  Assert 1 == 1

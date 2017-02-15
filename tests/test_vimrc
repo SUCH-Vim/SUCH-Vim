@@ -1,0 +1,5 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/vader.vim'
+
+call plug#end()
