@@ -15,3 +15,11 @@ fi
 rm -r ~/.SUCH-Vim/*
 cp -r ./* ~/.SUCH-Vim
 ln -s ~/.SUCH-Vim/vimrc.vim ~/.vimrc
+# Install plugin at startups
+program="nvim"
+condition=$(which $program 2>/dev/null | grep -v "not found" | wc -l)
+if [ $condition -eq 0 ] ; then
+    vim -c "PlugInstall | :q | :q"
+else
+    nvim -c "PlugInstall | :q | :q"
+fi
