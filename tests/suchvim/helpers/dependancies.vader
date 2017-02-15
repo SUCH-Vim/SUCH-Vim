@@ -1,7 +1,50 @@
-# Test case
-Execute (test assertion):
+Execute (Test have program):
+  source ~/.SUCH-Vim/suchvim/helpers/dependancies.vim
+  let actual = SUCHVim_check_dependancie("vim")
+  let expected = 1
+  Assert expected == actual
+
+
+Execute (Test don't have program):
+  source ~/.SUCH-Vim/suchvim/helpers/dependancies.vim
+  let actual = SUCHVim_check_dependancie("dontexit")
+  let expected = 0
+  Assert expected == actual
+
+
+Execute (Given installed programs when check dependancies than has dependancies):
+  source ~/.SUCH-Vim/suchvim/helpers/dependancies.vim
+  let installed_programs = []
+  call add(installed_programs, "vim")
+  call add(installed_programs, "nvim")
+  let actual = SUCHVim_check_dependancies(installed_programs)
+  let expected = []
+  Assert expected == actual
+
+
+Execute (Given not installed programs when check dependancies than doesn't have dependancies):
+  source ~/.SUCH-Vim/suchvim/helpers/dependancies.vim
+  let not_installed_programs = []
+  call add(not_installed_programs, "dontexit")
+  call add(not_installed_programs, "funthatthisdon")
+  let actual = SUCHVim_check_dependancies(not_installed_programs)
+  Assert not_installed_programs == actual
+
+
+Execute (Given mixed installed programs when check dependancies than return not installed dependancies):
   source ~/.SUCH-Vim/suchvim/helpers/dependancies.vim
   let programs = []
+  let installed_programs = []
+  call add(installed_programs, "vim")
+  call add(installed_programs, "nvim")
   call add(programs, "vim")
-  call SUCHVim_check_dependancie("vim")
-  Assert 1 == 1
+  call add(programs, "nvim")
+  let not_installed_programs = []
+  call add(not_installed_programs, "dontexit")
+  call add(not_installed_programs, "funthatthisdon")
+  call add(programs, "dontexit")
+  call add(programs, "funthatthisdon")
+
+  let actual = SUCHVim_check_dependancies(programs)
+
+  Assert not_installed_programs == actual

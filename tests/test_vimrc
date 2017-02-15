@@ -1,3 +1,14 @@
+" ----------------------------------------------------------------
+"  Fun config to have when runnig tests
+" ----------------------------------------------------------------
+
+let mapleader = " "
+source ~/.SUCH-Vim/common/config/motions/windows.vim
+
+" ----------------------------------------------------------------
+"  Vader framwword for testing
+" ----------------------------------------------------------------
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vader.vim'
