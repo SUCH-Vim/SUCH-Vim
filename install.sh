@@ -15,3 +15,5 @@ fi
 rm -r ~/.SUCH-Vim/*
 cp -r ./* ~/.SUCH-Vim
 ln -s ~/.SUCH-Vim/vimrc.vim ~/.vimrc
+# Install all plugins
+vim -c "PlugInstall | :q | :q"
