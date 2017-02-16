@@ -16,3 +16,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:Powerline_symbols = 'unicode'
 let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" ----------------------------------------------------------------
+"  For using Vader file
+" ----------------------------------------------------------------
+
+au BufRead,BufNewFile *.vader set filetype=vim
