@@ -1,13 +1,13 @@
 Execute (Test have program):
   source ~/.SUCH-Vim/suchvim/helpers/dependencies.vim
-  let actual = SUCHVim_check_dependencie("vim")
+  let actual = SUCHVim_check_dependency("vim")
   let expected = 1
   Assert expected == actual
 
 
 Execute (Test don't have program):
   source ~/.SUCH-Vim/suchvim/helpers/dependencies.vim
-  let actual = SUCHVim_check_dependencie("dontexit")
+  let actual = SUCHVim_check_dependency("dontexit")
   let expected = 0
   Assert expected == actual
 

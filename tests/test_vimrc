@@ -1,12 +1,12 @@
 " ----------------------------------------------------------------
-"  Fun config to have when runnig tests
+"  Fun config to have when running tests
 " ----------------------------------------------------------------
 
 let mapleader = " "
 source ~/.SUCH-Vim/common/config/motions/windows.vim
 
 " ----------------------------------------------------------------
-"  Vader framwword for testing
+"  Vader framework for testing
 " ----------------------------------------------------------------
 
 call plug#begin('~/.vim/plugged')
