@@ -27,7 +27,6 @@ source ~/.SUCH-Vim/common/config/languages/latex.vim
 " ----------------------------------------------------------------
 "  Include Environment
 " ----------------------------------------------------------------
-"
-source ~/.SUCH-Vim/common/config/environment/buffer.vim
 
+source ~/.SUCH-Vim/common/config/environment/buffer.vim
 source ~/.SUCH-Vim/common/config/environment/spell-checker.vim
