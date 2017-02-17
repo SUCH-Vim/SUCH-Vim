@@ -4,7 +4,6 @@ A Super User's Configuration for Handling Vim
 The goal is to have a stable, clean, intuitive configuration of vim.
 To do that, we try to have the same key binding in each languages for similar features.
 
-
 |Feature|Keybinding|
 |---|---|
 |Build|`<leader>b`|
@@ -45,7 +44,7 @@ If you want to use neovim: `pip install neovim`
 |Syntax checking|&#10004;|
 ### Javascript
 In order to have all the features, you have to install tern and jslint.
-*`npm -g install tern`* and *`npm -g install jshint`*
+*`npm -g install tern`* and *`npm -g install jslint`*
 
 |Feature|Status|
 |---|---|
