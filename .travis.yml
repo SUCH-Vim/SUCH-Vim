@@ -13,5 +13,4 @@ before_script: |
     cp -r ./* ~/.SUCH-Vim
 
 script: |
-    pwd
     sh /home/travis/build/nasim80/SUCH-Vim/run_tests_travis.sh > /dev/null
