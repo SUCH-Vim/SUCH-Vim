@@ -1,3 +1,4 @@
+![Build Status](https://travis-ci.org/nasim80/SUCH-Vim.svg?branch=master)
 # SUCH-Vim
 A Super User's Configuration for Handling Vim
 # Goal
