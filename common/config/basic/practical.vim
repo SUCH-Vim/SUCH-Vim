@@ -13,10 +13,11 @@ set nowrap
 
 let vim_command = "echo $TERM | grep term"
 let term_support = system(vim_command)
-if(term_support == '')
-    echo "no term support in this terminal emulator"
-else
+
+if(term_support != '')
     set termguicolors
+else
+    set t_Co=256 
 endif
 
 set background=dark
