@@ -5,7 +5,7 @@ sudo: required
 before_script: |
     git clone https://github.com/neovim/neovim
     cd Building-Neovim/
-    make
+    make CMAKE_BUILD_TYPE=RelWithDebInfo
     sudo make install
     cd ..
     curl -fLo ~/.config/.nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
