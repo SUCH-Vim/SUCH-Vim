@@ -1,4 +1,4 @@
-![Build Status](https://travis-ci.org/nasim80/SUCH-Vim.svg?branch=master)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+![Build Status](https://travis-ci.org/nasim80/SUCH-Vim.svg?branch=master)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-3.0/)
 # SUCH-Vim
 A Super User's Configuration for Handling Vim
 # Goal
