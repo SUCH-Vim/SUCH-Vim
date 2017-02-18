@@ -10,8 +10,6 @@ set nowrap
 "  UI Setup
 " ----------------------------------------------------------------
 
-set termguicolors
-set background=dark
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:Powerline_symbols = 'unicode'
