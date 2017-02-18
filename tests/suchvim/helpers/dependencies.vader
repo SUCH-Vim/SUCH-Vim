@@ -16,7 +16,7 @@ Execute (Given installed programs when check dependencies than has dependencies)
   source ~/.SUCH-Vim/suchvim/helpers/dependencies.vim
   let installed_programs = []
   call add(installed_programs, "vim")
-  call add(installed_programs, "nano")
+  call add(installed_programs, "ls")
   let actual = SUCHVim_check_dependencies(installed_programs)
   let expected = []
   Assert expected == actual
@@ -36,9 +36,9 @@ Execute (Given mixed installed programs when check dependencies than return not 
   let programs = []
   let installed_programs = []
   call add(installed_programs, "vim")
-  call add(installed_programs, "nano")
+  call add(installed_programs, "ls")
   call add(programs, "vim")
-  call add(programs, "nano")
+  call add(programs, "ls")
   let not_installed_programs = []
   call add(not_installed_programs, "dontexit")
   call add(not_installed_programs, "funthatthisdon")
