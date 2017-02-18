@@ -25,13 +25,11 @@ Execute (Given installed npm programs when check dependencies then don't reinsta
 Execute (Given not installed npm programs when check dependencies then install dependencies):
   call SUCHVim_check_npm_dependencies(not_installed_programs)
   let expected = SUCHVim_check_dependencies(not_installed_programs)
-  let actual = []
-  Assert expected == actual
+  Assert [] == expected
 
 Execute (Given mixed installed npm programs when check dependencies then install dependencies):
   call SUCHVim_check_npm_dependencies(programs)
 
   let expected = SUCHVim_check_dependencies(programs)
-  let actual = []
-  Assert expected == actual
+  Assert [] == expected
 

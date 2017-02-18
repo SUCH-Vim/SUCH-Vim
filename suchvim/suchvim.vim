@@ -1,5 +1,5 @@
 " ----------------------------------------------------------------
-"  Dependancies control
+"  Dependencies control
 " ----------------------------------------------------------------
 
 source ~/.SUCH-Vim/suchvim/helpers/dependencies.vim

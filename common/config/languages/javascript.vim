@@ -7,7 +7,7 @@ autocmd FileType javascript noremap <buffer>  <leader>d :TernDoc<cr>
 let g:editorconfig_Beautifier = "~/.SUCH-Vim/common/config/languages/js-beautify"
 
 " ----------------------------------------------------------------
-"  Dependancies control
+"  Dependencies control
 " ----------------------------------------------------------------
 
 let dependencies = [ 'tern', 'jshint' ]
