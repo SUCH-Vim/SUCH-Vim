@@ -43,7 +43,7 @@ If you want to use neovim: `pip install neovim`
 |Auto formatting|&#10004;|
 |Syntax checking|&#10004;|
 ### Javascript
-In order to have all the features, you have to install tern and jslint.
+In order to have all the features, you have to install tern and jshint.
 *`npm -g install tern`* and *`npm -g install jshint`*
 
 |Feature|Status|
