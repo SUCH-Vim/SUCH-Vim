@@ -11,7 +11,7 @@ autocmd FileType python let g:jedi#force_py_version = 3
 " ----------------------------------------------------------------
 "  Yapf config
 " ----------------------------------------------------------------
-  
+
 autocmd FileType python autocmd BufWritePre <buffer> :0,$!yapf
 autocmd FileType python nnoremap <buffer> <leader>f :0,$!yapf<Cr><C-o>
 
