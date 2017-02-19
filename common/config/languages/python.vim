@@ -14,3 +14,10 @@ autocmd FileType python let g:jedi#force_py_version = 3
   
 autocmd FileType python autocmd BufWritePre <buffer> :0,$!yapf
 autocmd FileType python nnoremap <buffer> <leader>f :0,$!yapf<Cr><C-o>
+
+" ----------------------------------------------------------------
+"  Dependencies control
+" ----------------------------------------------------------------
+
+let python_pip_dependencies = [ 'jedi', 'yapf', 'pylint', 'neovim']
+autocmd FileType python call SUCHVim_check_pip_dependencies(python_pip_dependencies)
