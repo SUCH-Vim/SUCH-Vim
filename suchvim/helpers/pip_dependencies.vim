@@ -1,6 +1,14 @@
+" ----------------------------------------------------------------
+"  Add pip installation directory in $PATH and $PYTHONPATH
+" ----------------------------------------------------------------
+
 let s:SUCHVim_pip_path = $HOME."/.SUCH-Vim/suchvim/dependencies/pip"
 let $PYTHONPATH .= ':'.s:SUCHVim_pip_path
 let $PATH .= ':'.s:SUCHVim_pip_path."/bin/"
+
+" ----------------------------------------------------------------
+"  Check if python dependencies can be imported
+" ----------------------------------------------------------------
 
 function! SUCHVim_check_python_module_dependencies(module_dependencies)
     let missing_dependencies = []
@@ -17,8 +25,29 @@ function! SUCHVim_check_python_module_dependencies(module_dependencies)
     return missing_dependencies
 endfunction
 
-function! SUCHVim_check_pip_dependencies(dependencies)
+" ----------------------------------------------------------------
+"  Install missing python modules
+" ----------------------------------------------------------------
+
+function! SUCHVim_check_pip_module_dependencies(dependencies)
     let missing_dependencies = SUCHVim_check_python_module_dependencies(a:dependencies)
+    let installed_programs = []
+    if len(missing_dependencies) != 0
+        let pip_install_command = "!pip install --target=".s:SUCHVim_pip_path
+        for dependency in missing_dependencies
+            call add(installed_programs, dependency)
+            execute pip_install_command." ".dependency
+        endfor
+    endif
+    return installed_programs
+endfunction
+
+" ----------------------------------------------------------------
+"  Install missing python executables
+" ----------------------------------------------------------------
+
+function! SUCHVim_check_pip_executable_dependencies(dependencies)
+    let missing_dependencies = SUCHVim_check_dependencies(a:dependencies)
     let installed_programs = []
     if len(missing_dependencies) != 0
         let pip_install_command = "!pip install --target=".s:SUCHVim_pip_path." --install-option=\"--install-scripts=".s:SUCHVim_pip_path."/bin\""
@@ -29,4 +58,3 @@ function! SUCHVim_check_pip_dependencies(dependencies)
     endif
     return installed_programs
 endfunction
-

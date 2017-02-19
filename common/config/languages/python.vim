@@ -19,5 +19,7 @@ autocmd FileType python nnoremap <buffer> <leader>f :0,$!yapf<Cr><C-o>
 "  Dependencies control
 " ----------------------------------------------------------------
 
-let python_pip_dependencies = [ 'jedi', 'yapf', 'pylint', 'neovim']
-autocmd FileType python call SUCHVim_check_pip_dependencies(python_pip_dependencies)
+let python_pip_module_dependencies = [ 'jedi', 'pylint', 'neovim']
+let python_pip_executable_dependencies = [ 'yapf' ]
+autocmd FileType python call SUCHVim_check_pip_executable_dependencies(python_pip_executable_dependencies)
+autocmd FileType python call SUCHVim_check_pip_module_dependencies(python_pip_module_dependencies)
