@@ -1,0 +1,37 @@
+Before (setUp):
+  let pip_executable_install_command = "!pip install --target=".$HOME."/.SUCH-Vim/suchvim/dependencies/pip --install-option=\"--install-scripts=".$HOME."/.SUCH-Vim/suchvim/dependencies/pip/bin\" pylint"
+
+  execute pip_executable_install_command
+
+  let executable = []
+  call add(executable, "yapf")
+  call add(executable, "pylint")
+
+  let not_installed_executable = []
+  call add(not_installed_executable, "yapf")
+
+  let installed_executable = []
+  call add(installed_executable, "pylint")
+
+After (Uninstalling everything from pip):
+  let pip_uninstall_command = "!rm -rf ~/.SUCH-Vim/suchvim/dependencies/pip/*"
+  execute pip_uninstall_command
+
+Execute (Given installed pip executable when check dependencies then don't reinstall dependencies):
+  source ~/.SUCH-Vim/suchvim/suchvim.vim
+  let actual = SUCHVim_check_pip_executable_dependencies(installed_executable)
+  Assert [] == actual
+    
+Execute (Given not installed pip executable when check dependencies then install dependencies):
+  source ~/.SUCH-Vim/suchvim/suchvim.vim
+  call SUCHVim_check_pip_executable_dependencies(not_installed_executable)
+
+  let actual = SUCHVim_check_dependencies(not_installed_executable)
+  Assert [] == actual
+
+Execute (Given mixed installed pip executable when check dependencies then install dependencies):
+  source ~/.SUCH-Vim/suchvim/suchvim.vim
+  call SUCHVim_check_pip_executable_dependencies(executable)
+
+  let actual = SUCHVim_check_dependencies(executable)
+  Assert [] == actual
