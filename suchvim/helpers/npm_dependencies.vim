@@ -4,12 +4,13 @@ let $PATH .= ':'.s:SUCHVim_npm_path.'bin'
 function! SUCHVim_check_npm_dependencies(dependencies)
     let missing_dependencies = SUCHVim_check_dependencies(a:dependencies)
     if len(missing_dependencies) != 0
-        if SUCHVim_check_npm_dependency("npm") == 0
-            return call SUCHVim_no_npm_npm_dependencies(missing_dependencies)
+        if SUCHVim_check_dependency("npm") == 0
+            return SUCHVim_no_npm_npm_dependencies(missing_dependencies)
         else
-            return call SUCHVim_install_npm_dependencies(missing_dependencies)
+            return SUCHVim_install_npm_dependencies(missing_dependencies)
         endif
     endif
+    return []
 endfunction
 
 function! SUCHVim_install_npm_dependencies(dependencies)
@@ -29,5 +30,6 @@ function! SUCHVim_no_npm_npm_dependencies(dependencies)
         let message = message." ".dependency
         call add(installed_programs, dependency)
     endfor
+    echom message
     return installed_programs
 endfunction

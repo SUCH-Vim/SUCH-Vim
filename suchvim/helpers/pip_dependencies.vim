@@ -31,14 +31,23 @@ endfunction
 
 function! SUCHVim_check_pip_module_dependencies(dependencies)
     let missing_dependencies = SUCHVim_check_python_module_dependencies(a:dependencies)
-    let installed_programs = []
     if len(missing_dependencies) != 0
-        let pip_install_command = "!pip install --target=".s:SUCHVim_pip_path
-        for dependency in missing_dependencies
-            call add(installed_programs, dependency)
-            execute pip_install_command." ".dependency
-        endfor
+        if SUCHVim_check_dependency("pip") == 0
+            return SUCHVim_no_pip_pip_dependencies(missing_dependencies)
+        else
+            return SUCHVim_install_pip_module_dependencies(missing_dependencies)
+        endif
     endif
+    return []
+endfunction
+
+function! SUCHVim_install_pip_module_dependencies(dependencies)
+    let pip_install_command = "!pip install --target=".s:SUCHVim_pip_path
+    let installed_programs = []
+    for dependency in a:dependencies
+        call add(installed_programs, dependency)
+        execute pip_install_command." ".dependency
+    endfor
     return installed_programs
 endfunction
 
@@ -48,13 +57,37 @@ endfunction
 
 function! SUCHVim_check_pip_executable_dependencies(dependencies)
     let missing_dependencies = SUCHVim_check_dependencies(a:dependencies)
-    let installed_programs = []
     if len(missing_dependencies) != 0
-        let pip_install_command = "!pip install --target=".s:SUCHVim_pip_path." --install-option=\"--install-scripts=".s:SUCHVim_pip_path."/bin\""
-        for dependency in missing_dependencies
-            call add(installed_programs, dependency)
-            execute pip_install_command." ".dependency
-        endfor
+        if SUCHVim_check_dependency("pip") == 0
+            return SUCHVim_no_pip_pip_dependencies(missing_dependencies)
+        else
+            return SUCHVim_install_pip_executable_dependencies(missing_dependencies)
+        endif
     endif
+    return []
+endfunction
+
+function! SUCHVim_install_pip_executable_dependencies(dependencies)
+    let pip_install_command = "!pip install --target=".s:SUCHVim_pip_path." --install-option=\"--install-scripts=".s:SUCHVim_pip_path."/bin\""
+    let installed_programs = []
+    for dependency in a:dependencies
+        call add(installed_programs, dependency)
+        execute pip_install_command." ".dependency
+    endfor
+    return installed_programs
+endfunction
+
+" ----------------------------------------------------------------
+"  Print missing python dependencies
+" ----------------------------------------------------------------
+
+function! SUCHVim_no_pip_pip_dependencies(dependencies)
+    let message = "There are missing dependencies and pip is not installed :"
+    let installed_programs = []
+    for dependency in a:dependencies
+        let message = message." ".dependency
+        call add(installed_programs, dependency)
+    endfor
+    echom message
     return installed_programs
 endfunction
