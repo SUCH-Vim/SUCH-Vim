@@ -10,7 +10,16 @@ set nowrap
 "  UI Setup
 " ----------------------------------------------------------------
 
-set termguicolors
+
+let vim_command = "echo $TERM | grep term"
+let term_support = system(vim_command)
+
+if(term_support != '')
+    set termguicolors
+else
+    set t_Co=256 
+endif
+
 set background=dark
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
