@@ -1,0 +1,35 @@
+Before (setUp):
+  source ~/.SUCH-Vim/suchvim/suchvim.vim
+  let npm_install_command = "!npm install --prefix ~/.SUCH-Vim/suchvim/dependencies/npm/ jshint -g"
+  execute npm_install_command
+  let programs = []
+  call add(programs, "tern")
+  call add(programs, "jslint")
+  call add(programs, "jshint")
+
+  let not_installed_programs = []
+  call add(not_installed_programs, "tern")
+  call add(not_installed_programs, "jslint")
+
+  let installed_programs = []
+  call add(installed_programs, "jshint")
+
+After (Uninstalling everything from npm):
+  let npm_uninstall_command = "!rm -rf ~/.SUCH-Vim/suchvim/dependencies/npm/*"
+  execute npm_uninstall_command
+
+Execute (Given installed npm programs when check dependencies then don't reinstall dependencies):
+  let installed_programs = SUCHVim_check_npm_dependencies(installed_programs)
+  Assert installed_programs == []
+    
+Execute (Given not installed npm programs when check dependencies then install dependencies):
+  call SUCHVim_check_npm_dependencies(not_installed_programs)
+  let actual = SUCHVim_check_dependencies(not_installed_programs)
+  Assert [] == actual
+
+Execute (Given mixed installed npm programs when check dependencies then install dependencies):
+  call SUCHVim_check_npm_dependencies(programs)
+
+  let actual = SUCHVim_check_dependencies(programs)
+  Assert [] == actual
+

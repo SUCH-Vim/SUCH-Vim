@@ -1,2 +1,2 @@
-nvim -u ~/.SUCH-Vim/tests/test_vimrc -c "PlugInstall | :q | :q" 
-nvim -u ~/.SUCH-Vim/tests/test_vimrc -c "Vader ~/.SUCH-Vim/tests/suchvim/helpers/dependencies.vader" 
+nvim -u ~/.SUCH-Vim/tests/test_vimrc -c "PlugInstall | :q | :q"
+nvim -u ~/.SUCH-Vim/tests/test_vimrc -c "Vader tests/suchvim/helpers/*" 

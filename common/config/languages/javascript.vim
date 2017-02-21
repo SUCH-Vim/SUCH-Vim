@@ -5,3 +5,10 @@ autocmd FileType javascript noremap <buffer>  <leader>r :TernRename<cr>
 autocmd FileType javascript noremap <buffer>  <leader>d :TernDoc<cr>
 
 let g:editorconfig_Beautifier = "~/.SUCH-Vim/common/config/languages/js-beautify"
+
+" ----------------------------------------------------------------
+"  Dependencies control
+" ----------------------------------------------------------------
+
+let dependencies = [ 'tern', 'jshint' ]
+autocmd FileType javascript call SUCHVim_check_npm_dependencies(dependencies)
