@@ -1,4 +1,5 @@
 Before (setUp):
+  let SUCHVim_npm_path = $HOME."/.SUCH-Vim/suchvim/dependencies/npm/"
   source ~/.SUCH-Vim/tests/unittests/suchvim/dependencies/mocks/dependencies.vim
   source ~/.SUCH-Vim/suchvim/dependencies/npm_dependencies.vim
 
@@ -8,7 +9,7 @@ Execute (Given not installed dependency When install Then command is correct):
 
   let npm_dependency_commands = SUCHVim_install_npm_dependencies(not_installed_depdendency)
 
-  let expected = "!npm install --prefix /home/nathaniel/.SUCH-Vim/suchvim/dependencies/npm/ jslint -g"
+  let expected = "!npm install --prefix ".SUCHVim_npm_path." jslint -g"
   Assert expected == npm_dependency_commands[0]
 
 Execute (Given not installed dependency When echo Then message is correct):
@@ -29,7 +30,7 @@ Execute (Given not installed dependency and has npm When check Then command is c
   call SUCHVim_check_npm_dependencies(not_installed_depdendency)
 
   let expected = []
-  call add(expected, "!npm install --prefix /home/nathaniel/.SUCH-Vim/suchvim/dependencies/npm/ jslint -g")
+  call add(expected, "!npm install --prefix ".SUCHVim_npm_path." jslint -g")
   let actual = SUCHVim_get_execute_dependency_commands()
   Assert expected == actual
 
@@ -79,8 +80,8 @@ Execute (Given not installed dependencies and has npm When check Then commands a
   call SUCHVim_check_npm_dependencies(not_installed_depdendencies)
 
   let expected = []
-  call add(expected, "!npm install --prefix /home/nathaniel/.SUCH-Vim/suchvim/dependencies/npm/ jslint -g")
-  call add(expected, "!npm install --prefix /home/nathaniel/.SUCH-Vim/suchvim/dependencies/npm/ atom -g")
+  call add(expected, "!npm install --prefix ".SUCHVim_npm_path." jslint -g")
+  call add(expected, "!npm install --prefix ".SUCHVim_npm_path." atom -g")
   let actual = SUCHVim_get_execute_dependency_commands()
   Assert expected == actual
 
@@ -114,8 +115,8 @@ Execute (Given mix dependencies and has npm When check Then commands are correct
   call SUCHVim_check_npm_dependencies(dependencies)
 
   let expected = []
-  call add(expected, "!npm install --prefix /home/nathaniel/.SUCH-Vim/suchvim/dependencies/npm/ jslint -g")
-  call add(expected, "!npm install --prefix /home/nathaniel/.SUCH-Vim/suchvim/dependencies/npm/ atom -g")
+  call add(expected, "!npm install --prefix ".SUCHVim_npm_path." jslint -g")
+  call add(expected, "!npm install --prefix ".SUCHVim_npm_path." atom -g")
   let actual = SUCHVim_get_execute_dependency_commands()
   Assert expected == actual
 

@@ -16,7 +16,7 @@ Execute (Test don't have program):
 Execute (Given installed programs when check dependencies than has dependencies):
   let installed_programs = []
   call add(installed_programs, "vim")
-  call add(installed_programs, "nvim")
+  call add(installed_programs, "vi")
   let actual = SUCHVim_check_dependencies(installed_programs)
   let expected = []
   Assert expected == actual
@@ -48,9 +48,9 @@ Execute (Given mixed installed programs when check dependencies than return not 
   let programs = []
   let installed_programs = []
   call add(installed_programs, "vim")
-  call add(installed_programs, "nvim")
+  call add(installed_programs, "vi")
   call add(programs, "vim")
-  call add(programs, "nvim")
+  call add(programs, "vi")
   let not_installed_programs = []
   call add(not_installed_programs, "dontexit")
   call add(not_installed_programs, "funthatthisdon")

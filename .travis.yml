@@ -3,16 +3,9 @@ language: generic
 sudo: required
 
 before_script: |
-    git clone https://github.com/junegunn/vader.vim.git
-    git clone https://github.com/junegunn/vim-pseudocl.git
-    git clone https://github.com/tpope/vim-repeat
-    hg clone https://code.google.com/p/vim/
-    cd vim
-    # ./configure --with-features=huge --enable-rubyinterp --enable-pythoninterp
-    ./configure --with-features=huge
-    make
-    sudo make install
-    cd ..
+    sudo add-apt-repository ppa:fcwu-tw/ppa
+    sudo apt-get update
+    sudo apt-get install vim
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     mkdir ~/.SUCH-Vim
     cp -r ./* ~/.SUCH-Vim
