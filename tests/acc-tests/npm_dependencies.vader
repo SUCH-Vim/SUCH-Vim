@@ -32,4 +32,3 @@ Execute (Given mixed installed npm programs when check dependencies then install
 
   let actual = SUCHVim_check_dependencies(programs)
   Assert [] == actual
-

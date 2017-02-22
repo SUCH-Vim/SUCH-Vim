@@ -1,0 +1,140 @@
+Before (setUp):
+  source ~/.SUCH-Vim/tests/unittests/suchvim/dependencies/mocks/dependencies.vim
+  source ~/.SUCH-Vim/suchvim/dependencies/npm_dependencies.vim
+
+Execute (Given not installed dependency When install Then command is correct):
+  let not_installed_depdendency = []
+  call add(not_installed_depdendency, "jslint")
+
+  let npm_dependency_commands = SUCHVim_install_npm_dependencies(not_installed_depdendency)
+
+  let expected = "!npm install --prefix /home/nathaniel/.SUCH-Vim/suchvim/dependencies/npm/ jslint -g"
+  Assert expected == npm_dependency_commands[0]
+
+Execute (Given not installed dependency When echo Then message is correct):
+  let not_installed_depdendency = []
+  call add(not_installed_depdendency, "jslint")
+
+  let npm_dependency_message = SUCHVim_echo_npm_dependencies(not_installed_depdendency)
+
+  let expected = "There are missing dependencies [ jslint ], install npm or install them manualy."
+  Assert expected == npm_dependency_message
+
+Execute (Given not installed dependency and has npm When check Then command is correct):
+  let not_installed_depdendency = []
+  call add(not_installed_depdendency, "jslint")
+  call SUCHVim_set_not_installed_dependencies(not_installed_depdendency)
+  call SUCHVim_set_check_dependency(1)
+
+  call SUCHVim_check_npm_dependencies(not_installed_depdendency)
+
+  let expected = []
+  call add(expected, "!npm install --prefix /home/nathaniel/.SUCH-Vim/suchvim/dependencies/npm/ jslint -g")
+  let actual = SUCHVim_get_execute_dependency_commands()
+  Assert expected == actual
+
+Execute (Given not installed dependency and doesn't have npm When check Then message is correct):
+  let not_installed_depdendency = []
+  call add(not_installed_depdendency, "jslint")
+  call SUCHVim_set_not_installed_dependencies(not_installed_depdendency)
+  call SUCHVim_set_check_dependency(0)
+
+  call SUCHVim_check_npm_dependencies(not_installed_depdendency)
+  let npm_dependency_message = SUCHVim_get_echo_dependency_commands()
+
+  let expected = "There are missing dependencies [ jslint ], install npm or install them manualy."
+  Assert expected == npm_dependency_message
+
+Execute (Given installed dependency and has npm When check Then nothing):
+  let installed_depdendency = []
+  call add(not_installed_depdendency, "jslint")
+  call SUCHVim_set_not_installed_dependencies(installed_depdendency)
+  call SUCHVim_set_check_dependency(1)
+
+  call SUCHVim_check_npm_dependencies(installed_depdendency)
+
+  let expected = []
+  let actual = SUCHVim_get_execute_dependency_commands()
+  Assert expected == actual
+
+Execute (Given installed dependency and doesn't have npm When check Then nothing):
+  let installed_depdendency = []
+  call add(not_installed_depdendency, "jslint")
+  call SUCHVim_set_not_installed_dependencies(installed_depdendency)
+  call SUCHVim_set_check_dependency(0)
+
+  call SUCHVim_check_npm_dependencies(installed_depdendency)
+  let npm_dependency_message = SUCHVim_get_echo_dependency_commands()
+
+  let expected = ""
+  Assert expected == npm_dependency_message
+
+Execute (Given not installed dependencies and has npm When check Then commands are correct):
+  let not_installed_depdendencies = []
+  call add(not_installed_depdendencies, "jslint")
+  call add(not_installed_depdendencies, "atom")
+  call SUCHVim_set_not_installed_dependencies(not_installed_depdendencies)
+  call SUCHVim_set_check_dependency(1)
+
+  call SUCHVim_check_npm_dependencies(not_installed_depdendencies)
+
+  let expected = []
+  call add(expected, "!npm install --prefix /home/nathaniel/.SUCH-Vim/suchvim/dependencies/npm/ jslint -g")
+  call add(expected, "!npm install --prefix /home/nathaniel/.SUCH-Vim/suchvim/dependencies/npm/ atom -g")
+  let actual = SUCHVim_get_execute_dependency_commands()
+  Assert expected == actual
+
+Execute (Given not installed dependencies and doesn't have npm When check Then message is correct):
+  let not_installed_depdendencies = []
+  call add(not_installed_depdendencies, "jslint")
+  call add(not_installed_depdendencies, "atom")
+  call SUCHVim_set_not_installed_dependencies(not_installed_depdendencies)
+  call SUCHVim_set_check_dependency(0)
+
+  call SUCHVim_check_npm_dependencies(not_installed_depdendencies)
+  let npm_dependency_message = SUCHVim_get_echo_dependency_commands()
+
+  let expected = "There are missing dependencies [ jslint atom ], install npm or install them manualy."
+  Assert expected == npm_dependency_message
+
+Execute (Given mix dependencies and has npm When check Then commands are correct):
+  let dependencies = []
+  let not_installed_depdendencies = []
+  let installed_dependencies = []
+  call add(not_installed_depdendencies, "jslint")
+  call add(not_installed_depdendencies, "atom")
+  call add(dependencies, "jslint")
+  call add(dependencies, "atom")
+  call add(installed_dependencies, "carrot")
+  call add(dependencies, "carrot")
+  call SUCHVim_set_not_installed_dependencies(not_installed_depdendencies)
+  call SUCHVim_set_installed_dependencies(installed_dependencies)
+  call SUCHVim_set_check_dependency(1)
+
+  call SUCHVim_check_npm_dependencies(dependencies)
+
+  let expected = []
+  call add(expected, "!npm install --prefix /home/nathaniel/.SUCH-Vim/suchvim/dependencies/npm/ jslint -g")
+  call add(expected, "!npm install --prefix /home/nathaniel/.SUCH-Vim/suchvim/dependencies/npm/ atom -g")
+  let actual = SUCHVim_get_execute_dependency_commands()
+  Assert expected == actual
+
+Execute (Given mix dependencies and doesn't have npm When check Then message is correct):
+  let dependencies = []
+  let not_installed_depdendencies = []
+  let installed_dependencies = []
+  call add(not_installed_depdendencies, "jslint")
+  call add(not_installed_depdendencies, "atom")
+  call add(dependencies, "jslint")
+  call add(dependencies, "atom")
+  call add(installed_dependencies, "carrot")
+  call add(dependencies, "carrot")
+  call SUCHVim_set_not_installed_dependencies(not_installed_depdendencies)
+  call SUCHVim_set_installed_dependencies(installed_dependencies)
+  call SUCHVim_set_check_dependency(0)
+
+  call SUCHVim_check_npm_dependencies(dependencies)
+  let npm_dependency_message = SUCHVim_get_echo_dependency_commands()
+
+  let expected = "There are missing dependencies [ jslint atom ], install npm or install them manualy."
+  Assert expected == npm_dependency_message

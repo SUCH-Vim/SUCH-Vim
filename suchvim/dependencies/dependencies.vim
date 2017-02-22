@@ -15,3 +15,13 @@ function! SUCHVim_check_dependencies(dependencies)
     endfor
     return missing_dependencies
 endfunction
+
+function! SUCHVim_execute_dependency_commands(dependency_commands)
+    for dependency_command in a:dependency_commands
+        execute dependency_commands
+    endfor
+endfunction
+
+function! SUCHVim_echo_dependency_commands(dependencies_message)
+    echo a:dependencies_message
+endfunction
