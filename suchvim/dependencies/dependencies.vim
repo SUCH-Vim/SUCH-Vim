@@ -1,4 +1,4 @@
-let s:SUCHVim_dependencies_sh_path = "~/.SUCH-Vim/suchvim/helpers/dependencies.sh "
+let s:SUCHVim_dependencies_sh_path = "~/.SUCH-Vim/suchvim/dependencies/dependencies.sh "
 
 function! SUCHVim_check_dependency(program)
     let vim_command = "sh ".s:SUCHVim_dependencies_sh_path.a:program 
@@ -18,7 +18,7 @@ endfunction
 
 function! SUCHVim_execute_dependency_commands(dependency_commands)
     for dependency_command in a:dependency_commands
-        execute dependency_commands
+        execute dependency_command
     endfor
 endfunction
 
