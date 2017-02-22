@@ -3,11 +3,16 @@ language: generic
 sudo: required
 
 before_script: |
-    sudo apt-get install -y software-properties-common
-    sudo apt-get install -y python-software-properties
-    sudo add-apt-repository -y ppa:neovim-ppa/unstable
-    sudo apt-get -qq update
-    sudo apt-get install -y neovim
+    git clone https://github.com/junegunn/vader.vim.git
+    git clone https://github.com/junegunn/vim-pseudocl.git
+    git clone https://github.com/tpope/vim-repeat
+    hg clone https://code.google.com/p/vim/
+    cd vim
+    # ./configure --with-features=huge --enable-rubyinterp --enable-pythoninterp
+    ./configure --with-features=huge
+    make
+    sudo make install
+    cd ..
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     mkdir ~/.SUCH-Vim
     cp -r ./* ~/.SUCH-Vim
