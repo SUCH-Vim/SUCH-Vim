@@ -6,35 +6,15 @@ let s:SUCHVim_pip_path = $HOME."/.SUCH-Vim/suchvim/dependencies/pip"
 let $PYTHONPATH .= ':'.s:SUCHVim_pip_path
 let $PATH .= ':'.s:SUCHVim_pip_path."/bin/"
 
-" ----------------------------------------------------------------
-"  Check if python dependencies can be imported
-" ----------------------------------------------------------------
-
-function! SUCHVim_check_python_module_dependencies(module_dependencies)
-    let missing_dependencies = []
-    let python_test_module_begin = "try:\r\timport "
-    let python_test_module_end = "\r\tprint(0)\rexcept ImportError:\r\tprint(1)\""
-    for dependency in a:module_dependencies
-        let vim_command = "python -c \"".python_test_module_begin.dependency.python_test_module_end
-        let is_installed = system(vim_command)
-        if is_installed == 1
-            call add(missing_dependencies, dependency)
-        endif
-    endfor
-    return missing_dependencies
-endfunction
-
-" ----------------------------------------------------------------
-"  Install missing python modules
-" ----------------------------------------------------------------
-
 function! SUCHVim_check_pip_module_dependencies(dependencies)
     let missing_dependencies = SUCHVim_check_python_module_dependencies(a:dependencies)
     if len(missing_dependencies) != 0
-        if SUCHVim_check_dependency("pip") == 0
-            return SUCHVim_no_pip_pip_dependencies(missing_dependencies)
+        if SUCHVim_check_dependency("pip") == 1
+            let pip_dependency_commands = SUCHVim_install_pip_module_dependencies(missing_dependencies)
+            call SUCHVim_execute_dependency_commands(pip_dependency_commands)
         else
-            return SUCHVim_install_pip_module_dependencies(missing_dependencies)
+            let pip_dependency_message = SUCHVim_echo_pip_dependencies(missing_dependencies)
+            call SUCHVim_echo_dependency_commands(pip_dependency_message)
         endif
     endif
     return []
@@ -42,12 +22,11 @@ endfunction
 
 function! SUCHVim_install_pip_module_dependencies(dependencies)
     let pip_install_command = "!pip install --target=".s:SUCHVim_pip_path
-    let installed_programs = []
+    let install_commands = []
     for dependency in a:dependencies
-        call add(installed_programs, dependency)
-        execute pip_install_command." ".dependency
+        call add(install_commands, pip_install_command." ".dependency)
     endfor
-    return installed_programs
+    return install_commands
 endfunction
 
 " ----------------------------------------------------------------

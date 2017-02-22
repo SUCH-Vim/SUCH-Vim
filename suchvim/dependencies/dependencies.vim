@@ -25,3 +25,21 @@ endfunction
 function! SUCHVim_echo_dependency_commands(dependencies_message)
     echo a:dependencies_message
 endfunction
+
+" ----------------------------------------------------------------
+"  Check if python dependencies can be imported
+" ----------------------------------------------------------------
+
+function! SUCHVim_check_python_module_dependencies(module_dependencies)
+    let missing_dependencies = []
+    let python_test_module_begin = "try:\r\timport "
+    let python_test_module_end = "\r\tprint(0)\rexcept ImportError:\r\tprint(1)\""
+    for dependency in a:module_dependencies
+        let vim_command = "python -c \"".python_test_module_begin.dependency.python_test_module_end
+        let is_installed = system(vim_command)
+        if is_installed == 1
+            call add(missing_dependencies, dependency)
+        endif
+    endfor
+    return missing_dependencies
+endfunction

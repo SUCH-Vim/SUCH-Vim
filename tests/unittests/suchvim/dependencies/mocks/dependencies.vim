@@ -39,3 +39,7 @@ endfunction
 function! SUCHVim_get_echo_dependency_commands()
     return s:dependencies_message
 endfunction
+
+function! SUCHVim_check_python_module_dependencies(dependencies)
+    return s:not_installed_dependencies
+endfunction

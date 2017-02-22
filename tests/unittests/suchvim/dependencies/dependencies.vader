@@ -21,12 +21,26 @@ Execute (Given installed programs when check dependencies than has dependencies)
   let expected = []
   Assert expected == actual
 
+Execute (Given installed python modules when check dependencies than has dependencies):
+  let installed_programs = []
+  call add(installed_programs, "math")
+  call add(installed_programs, "sys")
+  let actual = SUCHVim_check_python_module_dependencies(installed_programs)
+  let expected = []
+  Assert expected == actual
 
 Execute (Given not installed programs when check dependencies than doesn't have dependencies):
   let not_installed_programs = []
   call add(not_installed_programs, "dontexit")
   call add(not_installed_programs, "funthatthisdon")
   let actual = SUCHVim_check_dependencies(not_installed_programs)
+  Assert not_installed_programs == actual
+
+Execute (Given not installed python modules when check dependencies than doesn't have dependencies):
+  let not_installed_programs = []
+  call add(not_installed_programs, "dontexit")
+  call add(not_installed_programs, "funthatthisdon")
+  let actual = SUCHVim_check_python_module_dependencies(not_installed_programs)
   Assert not_installed_programs == actual
 
 
@@ -44,5 +58,20 @@ Execute (Given mixed installed programs when check dependencies than return not 
   call add(programs, "funthatthisdon")
 
   let actual = SUCHVim_check_dependencies(programs)
+  Assert not_installed_programs == actual
 
+Execute (Given mixed python modules when check dependencies than return not installed dependencies):
+  let programs = []
+  let installed_programs = []
+  call add(installed_programs, "math")
+  call add(installed_programs, "sys")
+  call add(programs, "math")
+  call add(programs, "sys")
+  let not_installed_programs = []
+  call add(not_installed_programs, "dontexit")
+  call add(not_installed_programs, "funthatthisdon")
+  call add(programs, "dontexit")
+  call add(programs, "funthatthisdon")
+
+  let actual = SUCHVim_check_python_module_dependencies(programs)
   Assert not_installed_programs == actual
