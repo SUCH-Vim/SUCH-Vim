@@ -1,0 +1,141 @@
+Before (setUp):
+  source ~/.SUCH-Vim/tests/unittests/suchvim/dependencies/mocks/dependencies.vim
+  source ~/.SUCH-Vim/suchvim/dependencies/pip_dependencies.vim
+  let SUCHVim_pip_path = $HOME."/.SUCH-Vim/suchvim/dependencies/pip"
+
+Execute (Given not installed dependency When install Then command is correct):
+  let not_installed_depdendency = []
+  call add(not_installed_depdendency, "pylint")
+
+  let pip_dependency_commands = SUCHVim_install_pip_executable_dependencies(not_installed_depdendency)
+
+  let expected = "!pip install --target=".SUCHVim_pip_path." --install-option=\"--install-scripts=".SUCHVim_pip_path."/bin\" pylint"
+  Assert expected == pip_dependency_commands[0]
+
+Execute (Given not installed dependency When echo Then message is correct):
+  let not_installed_depdendency = []
+  call add(not_installed_depdendency, "pylint")
+
+  let pip_dependency_message = SUCHVim_echo_pip_dependencies(not_installed_depdendency)
+
+  let expected = "There are missing dependencies [ pylint ], install pip or install them manualy."
+  Assert expected == pip_dependency_message
+
+Execute (Given not installed dependency and has pip When check Then command is correct):
+  let not_installed_depdendency = []
+  call add(not_installed_depdendency, "pylint")
+  call SUCHVim_set_not_installed_dependencies(not_installed_depdendency)
+  call SUCHVim_set_check_dependency(1)
+
+  call SUCHVim_check_pip_executable_dependencies(not_installed_depdendency)
+
+  let expected = []
+  call add(expected, "!pip install --target=".SUCHVim_pip_path." --install-option=\"--install-scripts=".SUCHVim_pip_path."/bin\" pylint")
+  let actual = SUCHVim_get_execute_dependency_commands()
+  Assert expected == actual
+
+Execute (Given not installed dependency and doesn't have pip When check Then message is correct):
+  let not_installed_depdendency = []
+  call add(not_installed_depdendency, "pylint")
+  call SUCHVim_set_not_installed_dependencies(not_installed_depdendency)
+  call SUCHVim_set_check_dependency(0)
+
+  call SUCHVim_check_pip_executable_dependencies(not_installed_depdendency)
+
+  let pip_dependency_message = SUCHVim_get_echo_dependency_commands()
+  let expected = "There are missing dependencies [ pylint ], install pip or install them manualy."
+  Assert expected == pip_dependency_message
+
+Execute (Given installed dependency and has pip When check Then nothing):
+  let installed_depdendency = []
+  call add(not_installed_depdendency, "pylint")
+  call SUCHVim_set_not_installed_dependencies(installed_depdendency)
+  call SUCHVim_set_check_dependency(1)
+
+  call SUCHVim_check_pip_executable_dependencies(installed_depdendency)
+
+  let expected = []
+  let actual = SUCHVim_get_execute_dependency_commands()
+  Assert expected == actual
+
+Execute (Given installed dependency and doesn't have pip When check Then nothing):
+  let installed_depdendency = []
+  call add(not_installed_depdendency, "pylint")
+  call SUCHVim_set_not_installed_dependencies(installed_depdendency)
+  call SUCHVim_set_check_dependency(0)
+
+  call SUCHVim_check_pip_executable_dependencies(installed_depdendency)
+  let pip_dependency_message = SUCHVim_get_echo_dependency_commands()
+
+  let expected = ""
+  Assert expected == pip_dependency_message
+
+Execute (Given not installed dependencies and has pip When check Then commands are correct):
+  let not_installed_depdendencies = []
+  call add(not_installed_depdendencies, "pylint")
+  call add(not_installed_depdendencies, "atom")
+  call SUCHVim_set_not_installed_dependencies(not_installed_depdendencies)
+  call SUCHVim_set_check_dependency(1)
+
+  call SUCHVim_check_pip_executable_dependencies(not_installed_depdendencies)
+
+  let expected = []
+  call add(expected, "!pip install --target=".SUCHVim_pip_path." --install-option=\"--install-scripts=".SUCHVim_pip_path."/bin\" pylint")
+  call add(expected, "!pip install --target=".SUCHVim_pip_path." --install-option=\"--install-scripts=".SUCHVim_pip_path."/bin\" atom")
+  let actual = SUCHVim_get_execute_dependency_commands()
+  Assert expected == actual
+
+Execute (Given not installed dependencies and doesn't have pip When check Then message is correct):
+  let not_installed_depdendencies = []
+  call add(not_installed_depdendencies, "pylint")
+  call add(not_installed_depdendencies, "atom")
+  call SUCHVim_set_not_installed_dependencies(not_installed_depdendencies)
+  call SUCHVim_set_check_dependency(0)
+
+  call SUCHVim_check_pip_executable_dependencies(not_installed_depdendencies)
+  let pip_dependency_message = SUCHVim_get_echo_dependency_commands()
+
+  let expected = "There are missing dependencies [ pylint atom ], install pip or install them manualy."
+  Assert expected == pip_dependency_message
+
+Execute (Given mix dependencies and has pip When check Then commands are correct):
+  let dependencies = []
+  let not_installed_depdendencies = []
+  let installed_dependencies = []
+  call add(not_installed_depdendencies, "pylint")
+  call add(not_installed_depdendencies, "atom")
+  call add(dependencies, "pylint")
+  call add(dependencies, "atom")
+  call add(installed_dependencies, "carrot")
+  call add(dependencies, "carrot")
+  call SUCHVim_set_not_installed_dependencies(not_installed_depdendencies)
+  call SUCHVim_set_installed_dependencies(installed_dependencies)
+  call SUCHVim_set_check_dependency(1)
+
+  call SUCHVim_check_pip_executable_dependencies(dependencies)
+
+  let expected = []
+  call add(expected, "!pip install --target=".SUCHVim_pip_path." --install-option=\"--install-scripts=".SUCHVim_pip_path."/bin\" pylint")
+  call add(expected, "!pip install --target=".SUCHVim_pip_path." --install-option=\"--install-scripts=".SUCHVim_pip_path."/bin\" atom")
+  let actual = SUCHVim_get_execute_dependency_commands()
+  Assert expected == actual
+
+Execute (Given mix dependencies and doesn't have pip When check Then message is correct):
+  let dependencies = []
+  let not_installed_depdendencies = []
+  let installed_dependencies = []
+  call add(not_installed_depdendencies, "pylint")
+  call add(not_installed_depdendencies, "atom")
+  call add(dependencies, "pylint")
+  call add(dependencies, "atom")
+  call add(installed_dependencies, "carrot")
+  call add(dependencies, "carrot")
+  call SUCHVim_set_not_installed_dependencies(not_installed_depdendencies)
+  call SUCHVim_set_installed_dependencies(installed_dependencies)
+  call SUCHVim_set_check_dependency(0)
+
+  call SUCHVim_check_pip_executable_dependencies(dependencies)
+  let pip_dependency_message = SUCHVim_get_echo_dependency_commands()
+
+  let expected = "There are missing dependencies [ pylint atom ], install pip or install them manualy."
+  Assert expected == pip_dependency_message
