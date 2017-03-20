@@ -1,8 +1,14 @@
-<center> <h1>SUCH-Vim</h1><br /> <h4>A Super User's Configuration for Handling Vim<h4> <br />
-![Build Status](https://travis-ci.org/nasim80/SUCH-Vim.svg?branch=master)&nbsp;&nbsp;&nbsp;&nbsp;[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)&nbsp;&nbsp;&nbsp;&nbsp;[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-3.0/)</center>
+<h1>SUCH-Vim</h1>
+<h4>A Super User's Configuration for Handling Vim<h4>
+
+[![Build Status](https://travis-ci.org/nasim80/SUCH-Vim.svg?branch=master)](https://travis-ci.org/SUCH-Vim/SUCH-Vim)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-3.0/)
+
 # Goal
 The goal is to have a stable, clean, intuitive configuration of vim.
 To do that, we try to have the same key binding in each languages for similar features.
+
 |Feature|Keybinding|
 |---|---|
 |Build|`<leader>b`|
