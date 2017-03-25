@@ -109,6 +109,11 @@ Ex: Put your cursor at the begining of the paragraph and do `*line number of par
 Toggle nerdtree : *`<Leader>tt`*
 
 Fuzzy search files : *`<Leader>ff`*
+
+Open buffer in list of opened buffer : *`<Leader>b (type a single number)<Enter>`*
+
+Delete current buffer : *`<Leader>bd`*
+
 # Motions
 ### Cursor
 Jump to anywhere you want with minimal keystrokes, with just one key binding.
@@ -118,5 +123,6 @@ Search for a character with : *`<Leader>;{char}{label}`*.
 Search for n characters with : *`<Leader>ss{char}{char}...{char}<Enter>`*.
 
 You can also jump to a line with jk : *`<Leader>j{char}`* and  *`<Leader>k{char}`*.
+
 # Configuration
 You can define your own configuration in the file *~/.suchvimrc*.

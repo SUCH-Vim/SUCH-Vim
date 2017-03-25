@@ -17,3 +17,12 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 nnoremap <Leader>ff :CtrlP<CR>
 let g:ctrlp_working_path_mode = 'ra'
+
+
+" ----------------------------------------------------------------
+"  Buffer list Setup
+" ----------------------------------------------------------------
+"
+
+:nnoremap <Leader>b :buffers<CR>:buffer<Space>
+:nnoremap <Leader>bd :bd<CR>
