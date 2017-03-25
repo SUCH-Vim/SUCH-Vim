@@ -26,3 +26,12 @@ let g:ctrlp_working_path_mode = 'ra'
 
 :nnoremap <Leader>b :buffers<CR>:buffer<Space>
 :nnoremap <Leader>bd :bd<CR>
+:nnoremap <Leader>b1 :b1<CR>
+:nnoremap <Leader>b2 :b2<CR>
+:nnoremap <Leader>b3 :b3<CR>
+:nnoremap <Leader>b4 :b4<CR>
+:nnoremap <Leader>b5 :b5<CR>
+:nnoremap <Leader>b6 :b6<CR>
+:nnoremap <Leader>b7 :b7<CR>
+:nnoremap <Leader>b8 :b8<CR>
+:nnoremap <Leader>b9 :b9<CR>
