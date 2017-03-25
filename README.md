@@ -110,11 +110,15 @@ Toggle nerdtree : *`<Leader>tt`*
 
 Fuzzy search files : *`<Leader>ff`*
 
-View opened buffers and open one of them : *`<Leader>b(wait and type a single number)<Enter>`*
+View opened buffers and open one of them : *`<Leader>bb(wait and type a single number)<Enter>`*
 
 Open buffer with number : *`<Leader>b(enter a number)<Enter>`*
 
 Delete current buffer : *`<Leader>bd`*
+
+Next buffer : *`<Leader>bn`*
+
+Previous buffer : *`<Leader>bp`*
 
 # Motions
 ### Cursor

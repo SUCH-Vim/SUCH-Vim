@@ -35,3 +35,6 @@ let g:ctrlp_working_path_mode = 'ra'
 :nnoremap <Leader>b7 :b7<CR>
 :nnoremap <Leader>b8 :b8<CR>
 :nnoremap <Leader>b9 :b9<CR>
+:nnoremap <leader>bn :bn<Enter>
+:nnoremap <leader>bp :bp<Enter>
+
