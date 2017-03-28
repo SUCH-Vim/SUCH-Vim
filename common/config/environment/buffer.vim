@@ -25,7 +25,21 @@ let g:ctrlp_working_path_mode = 'ra'
 "
 
 :nnoremap <Leader>b :buffers<CR>:buffer<Space>
+:nnoremap <Leader>be :e<Space>
+:nnoremap <leader>l :bn<CR>
+:nnoremap <leader>h :bp<CR>
+
 :nnoremap <Leader>bd :bd<CR>
+:nnoremap <Leader>b1d :1bd<CR>
+:nnoremap <Leader>b2d :2bd<CR>
+:nnoremap <Leader>b3d :3bd<CR>
+:nnoremap <Leader>b4d :4bd<CR>
+:nnoremap <Leader>b5d :5bd<CR>
+:nnoremap <Leader>b6d :6bd<CR>
+:nnoremap <Leader>b7d :7bd<CR>
+:nnoremap <Leader>b8d :8bd<CR>
+:nnoremap <Leader>b9d :9bd<CR>
+
 :nnoremap <Leader>b1 :b1<CR>
 :nnoremap <Leader>b2 :b2<CR>
 :nnoremap <Leader>b3 :b3<CR>
@@ -35,6 +49,4 @@ let g:ctrlp_working_path_mode = 'ra'
 :nnoremap <Leader>b7 :b7<CR>
 :nnoremap <Leader>b8 :b8<CR>
 :nnoremap <Leader>b9 :b9<CR>
-:nnoremap <leader>bn :bn<Enter>
-:nnoremap <leader>bp :bp<Enter>
 

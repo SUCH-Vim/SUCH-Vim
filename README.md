@@ -106,6 +106,7 @@ Clang-Check uses Compilation database (https://clang.llvm.org/docs/JSONCompilati
 You can format a paragraph by selecting it and use the `<leader>f`.
 Ex: Put your cursor at the begining of the paragraph and do `*line number of paragraph*<leader>f`
 # Buffers 
+
 Toggle nerdtree : *`<Leader>tt`*
 
 Fuzzy search files : *`<Leader>ff`*
@@ -116,9 +117,13 @@ Open buffer with number : *`<Leader>b(enter a number)<Enter>`*
 
 Delete current buffer : *`<Leader>bd`*
 
-Next buffer : *`<Leader>bn`*
+Delete buffer with number : *`<Leader>b(enter a number)d`*
 
-Previous buffer : *`<Leader>bp`*
+Create buffer : `<Leader>be (write the file name)<Enter>`
+
+Next buffer : *`<Leader>l`*
+
+Previous buffer : *`<Leader>h`*
 
 # Motions
 ### Cursor
