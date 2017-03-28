@@ -22,31 +22,29 @@ let g:ctrlp_working_path_mode = 'ra'
 " ----------------------------------------------------------------
 "  Buffer list Setup
 " ----------------------------------------------------------------
-"
 
-:nnoremap <Leader>b :buffers<CR>:buffer<Space>
-:nnoremap <Leader>be :e<Space>
-:nnoremap <leader>l :bn<CR>
-:nnoremap <leader>h :bp<CR>
+function! GoToBuffer()
+  let curline = getline('.')
+  call inputsave()
+  let buffer_number = input('[GO TO BUFFER] Buffer number: ')
+  call inputrestore()
+  let vim_command = "b".buffer_number
+  execute vim_command
+endfunction
 
-:nnoremap <Leader>bd :bd<CR>
-:nnoremap <Leader>b1d :1bd<CR>
-:nnoremap <Leader>b2d :2bd<CR>
-:nnoremap <Leader>b3d :3bd<CR>
-:nnoremap <Leader>b4d :4bd<CR>
-:nnoremap <Leader>b5d :5bd<CR>
-:nnoremap <Leader>b6d :6bd<CR>
-:nnoremap <Leader>b7d :7bd<CR>
-:nnoremap <Leader>b8d :8bd<CR>
-:nnoremap <Leader>b9d :9bd<CR>
+function! DeleteBuffer()
+  let curline = getline('.')
+  call inputsave()
+  let buffer_number = input('[DELETE BUFFER] Buffer number: ')
+  call inputrestore()
+  let vim_command = buffer_number."bd"
+  execute vim_command
+endfunction
 
-:nnoremap <Leader>b1 :b1<CR>
-:nnoremap <Leader>b2 :b2<CR>
-:nnoremap <Leader>b3 :b3<CR>
-:nnoremap <Leader>b4 :b4<CR>
-:nnoremap <Leader>b5 :b5<CR>
-:nnoremap <Leader>b6 :b6<CR>
-:nnoremap <Leader>b7 :b7<CR>
-:nnoremap <Leader>b8 :b8<CR>
-:nnoremap <Leader>b9 :b9<CR>
+nnoremap <Leader>bg :call GoToBuffer()<CR>
+nnoremap <Leader>bd :call DeleteBuffer()<CR>
 
+nnoremap <Leader>bb :buffers<CR>:buffer<Space>
+
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bp :bp<CR>
