@@ -45,6 +45,7 @@ nnoremap <Leader>bg :call GoToBuffer()<CR>
 nnoremap <Leader>bd :call DeleteBuffer()<CR>
 
 nnoremap <Leader>bb :buffers<CR>:buffer<Space>
+nnoremap <Leader>be :e<Space>
 
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>bp :bp<CR>
