@@ -17,4 +17,3 @@ nnoremap <leader>wr<Right> :vertical resize +5<Enter>
 nnoremap <leader>wr<Left> :vertical resize -5<Enter>
 nnoremap <leader>wml <C-w>L 
 nnoremap <leader>wm<Right> <C-w>L
-nnoremap <leader>ww :bnext<Enter>

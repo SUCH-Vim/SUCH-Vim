@@ -105,6 +105,25 @@ Clang-Check uses Compilation database (https://clang.llvm.org/docs/JSONCompilati
 
 You can format a paragraph by selecting it and use the `<leader>f`.
 Ex: Put your cursor at the begining of the paragraph and do `*line number of paragraph*<leader>f`
+
+# Windows
+
+Move to the right window:
+`<Leader>wl`
+`<Leader>w<Right>` 
+
+Move to the left window:
+`<Leader>wh`
+`<Leader>w<Left>`
+
+Move to the below window:
+`<Leader>wj`
+`<Leader>w<Down>`
+
+Move to the above window:
+`<Leader>wk`
+`<Leader>w<Up>`
+
 # Buffers 
 Toggle nerdtree : *`<Leader>tt`*
 
