@@ -3,6 +3,7 @@
 " ----------------------------------------------------------------
 
 source ~/.SUCH-Vim/suchvim/suchvim.vim
+
 " ----------------------------------------------------------------
 "  Include Basic
 " ----------------------------------------------------------------
@@ -28,6 +29,8 @@ source ~/.SUCH-Vim/common/config/languages/html.vim
 source ~/.SUCH-Vim/common/config/languages/json.vim
 source ~/.SUCH-Vim/common/config/languages/c.vim
 source ~/.SUCH-Vim/common/config/languages/latex.vim
+source ~/.SUCH-Vim/common/config/languages/haskell.vim
+
 
 " ----------------------------------------------------------------
 "  Include Environment
