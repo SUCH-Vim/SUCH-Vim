@@ -7,4 +7,5 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_go_checkers = ['go']
 let g:syntastic_c_checkers = ['clang_check']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_c_clang_check_post_args = ""
