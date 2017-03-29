@@ -47,9 +47,10 @@ If you want to use neovim: `pip install neovim`
 |Show documentation|&#10004;|
 |Auto formatting|&#10004;|
 |Syntax checking|&#10004;|
+
 ### Javascript
-In order to have all the features, you have to install tern and jshint.
-*`npm -g install tern`* and *`npm -g install jshint`*
+We use `eslint` to check the syntax of your javascript project. It is automatically
+installed for you but you still have to provide your own `.eslintrc.json` file to configure it.
 
 |Feature|Status|
 |---|---|
