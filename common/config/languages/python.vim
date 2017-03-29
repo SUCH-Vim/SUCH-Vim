@@ -33,3 +33,9 @@ function! SUCHVim_format_python()
     endif
     call setpos('.', current_cursor)
 endfunction
+
+" ----------------------------------------------------------------
+"  Better syntax
+" ----------------------------------------------------------------
+
+autocmd FileType python syn keyword pythonSelf self | highlight def link pythonSelf Special
