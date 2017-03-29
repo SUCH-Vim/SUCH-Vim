@@ -1,5 +1,3 @@
-call plug#begin('~/.vim/plugged')
-
 " ----------------------------------------------------------------
 "  Include common plugins
 " ----------------------------------------------------------------
@@ -18,5 +16,3 @@ source ~/.SUCH-Vim/vim/plugins/languages/c.vim
 
 source ~/.SUCH-Vim/vim/plugins/visual/autocompletion.vim
 source ~/.SUCH-Vim/vim/plugins/visual/helpers.vim
-
-call plug#end()
