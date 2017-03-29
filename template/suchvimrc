@@ -1,0 +1,5 @@
+let mapleader = " "
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+autocmd VimEnter * colorscheme base16-atelierheath
+            \| :AirlineTheme base16
