@@ -1,16 +1,11 @@
 # SUCH-Vim
 #### A Super User's Configuration for Handling Vim
-
 [![Build Status](https://travis-ci.org/nasim80/SUCH-Vim.svg?branch=master)](https://travis-ci.org/SUCH-Vim/SUCH-Vim)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-3.0/)
-
 # Goal
 The goal is to have a stable, clean, intuitive configuration of vim.
 To do that, we try to have the same key binding in each languages for similar features.
-
-We also developed a dependencies control so the user don't have to install manually the npm and pip packages required by our plugins' selection.
-Those dependencies are installed automatically in `.vim/SUCH-Vim/dependencies/`
 
 |Feature|Keybinding|
 |---|---|
@@ -21,6 +16,9 @@ Those dependencies are installed automatically in `.vim/SUCH-Vim/dependencies/`
 |Go to definition|`<leader>g`|
 |Show documentation|`<leader>d`|
 |Auto formatting|on write|
+
+We also developed a dependencies control so the user don't have to install manually the npm and pip packages required by our plugins' selection.
+Those dependencies are installed automatically in `.vim/SUCH-Vim/dependencies/`
 # Installation
 You can develop in your cloned Git repository's directory and execute the ./install.sh in order to apply changes to your config. A backup of your last config will be created in the $HOME/.vimrc_old file.
 
