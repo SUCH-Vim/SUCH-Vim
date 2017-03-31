@@ -1,0 +1,7 @@
+Move to the right window: `<Leader>wl` or `<Leader>w<Right>` 
+
+Move to the left window: `<Leader>wh` or `<Leader>w<Left>`
+
+Move to the below window: `<Leader>wj` or `<Leader>w<Down>`
+
+Move to the above window: `<Leader>wk` or `<Leader>w<Up>`

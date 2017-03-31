@@ -31,3 +31,5 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " ----------------------------------------------------------------
 
 au BufRead,BufNewFile *.vader set filetype=vim
+
+noremap <leader>D :call SUCHVim_show_doc()<cr>
