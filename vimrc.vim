@@ -1,9 +1,8 @@
 " ----------------------------------------------------------------
-"  Init utilitie files
+"  Include suchvim scripts
 " ----------------------------------------------------------------
 
-source ~/.SUCH-Vim/suchvim/command-executer.vim
-source ~/.SUCH-Vim/suchvim/user-plugins.vim
+source ~/.SUCH-Vim/suchvim/suchvim.vim
 
 " ----------------------------------------------------------------
 "  Init personal config
