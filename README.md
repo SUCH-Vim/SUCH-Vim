@@ -31,6 +31,9 @@ You can develop in your cloned Git repository's directory and execute the ./inst
 |Auto formatting|&#10060;|
 |Syntax checking|&#10060;|
 ### Python
+We use `yapf` to check the syntax of your python project. It is automatically
+installed for you but you still have to provide your own `~/.style.yapf` file to configure it.
+
 |Feature|Status|
 |---|---|
 |Completions|&#10004;|
@@ -39,7 +42,11 @@ You can develop in your cloned Git repository's directory and execute the ./inst
 |Show documentation|&#10004;|
 |Auto formatting|&#10004;|
 |Syntax checking|&#10004;|
+
 ### Javascript
+We use `eslint` to check the syntax of your javascript project. It is automatically
+installed for you but you still have to provide your own `.eslintrc.json` file to configure it.
+
 |Feature|Status|
 |---|---|
 |Completions|&#10004;|
