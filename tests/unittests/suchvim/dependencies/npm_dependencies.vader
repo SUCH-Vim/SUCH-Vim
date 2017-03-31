@@ -1,5 +1,5 @@
 Before (setUp):
-  let SUCHVim_npm_path = $HOME."/.SUCH-Vim/suchvim/dependencies/npm/"
+  let SUCHVim_npm_path = $HOME."/.vim/SUCH-Vim/dependencies/npm/"
   source ~/.SUCH-Vim/tests/unittests/suchvim/dependencies/mocks/dependencies.vim
   source ~/.SUCH-Vim/suchvim/dependencies/npm_dependencies.vim
 

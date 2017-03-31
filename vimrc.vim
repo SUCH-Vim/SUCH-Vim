@@ -1,8 +1,13 @@
 " ----------------------------------------------------------------
-"  Init personal config
+"  Init utilitie files
 " ----------------------------------------------------------------
 
+source ~/.SUCH-Vim/suchvim/command-executer.vim
 source ~/.SUCH-Vim/suchvim/user-plugins.vim
+
+" ----------------------------------------------------------------
+"  Init personal config
+" ----------------------------------------------------------------
 
 if filereadable(expand("~/.suchvimrc"))
     source ~/.suchvimrc
@@ -18,7 +23,10 @@ if has("nvim")
 else
     source ~/.SUCH-Vim/vim/plugins/plugins.vim
 endif
-call SUCHVim_loadUserPlugin()
+
+let plugins_commands = SUCHVim_getUserPlugins()
+call SUCHVim_execute_commands(plugins_commands)
+
 call plug#end()
 
 " ----------------------------------------------------------------

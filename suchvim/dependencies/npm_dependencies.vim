@@ -1,4 +1,4 @@
-let s:SUCHVim_npm_path = $HOME."/.SUCH-Vim/suchvim/dependencies/npm/"
+let s:SUCHVim_npm_path = $HOME."/.vim/SUCH-Vim/dependencies/npm/"
 let $PATH .= ':'.s:SUCHVim_npm_path.'bin'
 
 function! SUCHVim_check_npm_dependencies(dependencies)

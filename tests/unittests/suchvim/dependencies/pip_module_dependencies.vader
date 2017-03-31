@@ -1,7 +1,7 @@
 Before (setUp):
   source ~/.SUCH-Vim/tests/unittests/suchvim/dependencies/mocks/dependencies.vim
   source ~/.SUCH-Vim/suchvim/dependencies/pip_dependencies.vim
-  let SUCHVim_pip_path = $HOME."/.SUCH-Vim/suchvim/dependencies/pip"
+  let SUCHVim_pip_path = $HOME."/.vim/SUCH-Vim/dependencies/pip"
 
 Execute (Given not installed dependency When install Then command is correct):
   let not_installed_depdendency = []

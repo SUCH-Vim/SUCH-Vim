@@ -2,7 +2,7 @@
 "  Add pip installation directory in $PATH and $PYTHONPATH
 " ----------------------------------------------------------------
 
-let s:SUCHVim_pip_path = $HOME."/.SUCH-Vim/suchvim/dependencies/pip"
+let s:SUCHVim_pip_path = $HOME."/.vim/SUCH-Vim/dependencies/pip"
 let $PYTHONPATH .= ':'.s:SUCHVim_pip_path
 let $PATH .= ':'.s:SUCHVim_pip_path."/bin/"
 
