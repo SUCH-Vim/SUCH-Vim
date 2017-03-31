@@ -1,5 +1,5 @@
-<h1>SUCH-Vim</h1>
-<h4>A Super User's Configuration for Handling Vim<h4>
+# SUCH-Vim
+#### A Super User's Configuration for Handling Vim
 
 [![Build Status](https://travis-ci.org/nasim80/SUCH-Vim.svg?branch=master)](https://travis-ci.org/SUCH-Vim/SUCH-Vim)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
@@ -8,6 +8,9 @@
 # Goal
 The goal is to have a stable, clean, intuitive configuration of vim.
 To do that, we try to have the same key binding in each languages for similar features.
+
+We also developed a dependencies control so the user don't have to install manually the npm and pip packages required by our plugins' selection.
+Those dependencies are installed automatically in `.vim/SUCH-Vim/dependencies/`
 
 |Feature|Keybinding|
 |---|---|
@@ -21,12 +24,8 @@ To do that, we try to have the same key binding in each languages for similar fe
 # Installation
 You can develop in your cloned Git repository's directory and execute the ./install.sh in order to apply changes to your config. A backup of your last config will be created in the $HOME/.vimrc_old file.
 
-The first time you open vim, you have to call Vim-Plug with *`:PlugInstall`* in order to install all the plugins.
 # Languages
 ### Markdown
-In order to have all the features, you have to install instant-markdown-d
-*`npm -g install instant-markdown-d`*
-
 |Feature|Status|
 |---|---|
 |Folding|&#10004;|
@@ -34,11 +33,6 @@ In order to have all the features, you have to install instant-markdown-d
 |Auto formatting|&#10060;|
 |Syntax checking|&#10060;|
 ### Python
-In order to have all the features, you have to install jedi, yapf and pylint.
-*`pip install jedi`*, *`pip install yapf`* and *`pip install pylint`*
-
-If you want to use neovim: `pip install neovim`
-
 |Feature|Status|
 |---|---|
 |Completions|&#10004;|
@@ -48,9 +42,6 @@ If you want to use neovim: `pip install neovim`
 |Auto formatting|&#10004;|
 |Syntax checking|&#10004;|
 ### Javascript
-In order to have all the features, you have to install tern and jshint.
-*`npm -g install tern`* and *`npm -g install jshint`*
-
 |Feature|Status|
 |---|---|
 |Completions|&#10004;|
@@ -107,7 +98,6 @@ You can format a paragraph by selecting it and use the `<leader>f`.
 Ex: Put your cursor at the begining of the paragraph and do `*line number of paragraph*<leader>f`
 
 # Windows
-
 Move to the right window:
 `<Leader>wl`
 `<Leader>w<Right>` 
