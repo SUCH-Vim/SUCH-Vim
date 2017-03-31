@@ -1,8 +1,4 @@
 autocmd FileType javascript autocmd BufWritePre <buffer> call JsxBeautify()
-"autocmd FileType javascript noremap <buffer>  <leader>f :call JsxBeautify()<cr>
-"autocmd FileType javascript noremap <buffer>  <leader>g :TernDef<cr>
-"autocmd FileType javascript noremap <buffer>  <leader>r :TernRename<cr>
-"autocmd FileType javascript noremap <buffer>  <leader>d :TernDoc<cr>
 
 call SUCHVim_add_filetype_keybinding("javascript", "<leader>f", ":call JsxBeautify()<cr>", "Reformat file")
 call SUCHVim_add_filetype_keybinding("javascript", "<leader>r", ":TernRename<cr>", "Rename")
