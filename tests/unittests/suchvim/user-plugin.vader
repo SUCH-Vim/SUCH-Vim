@@ -1,0 +1,24 @@
+Before (setUp):
+  source ~/.SUCH-Vim/suchvim/user-command/user-plugins.vim
+
+
+Execute (Given a plugin When add plugins Then the plugin is added):
+  let plugin_to_add = ["ValidGithubUserName/ValidPluginName"]
+
+  call SUCHVim_addPlugins(plugin_to_add)
+
+  let actual = SUCHVim_getUserPlugins()
+  let expected = "Plug '".plugin_to_add[0]."'"
+  Assert expected == actual[0]
+
+
+Execute (Given two plugins When add plugins Then plugins are added):
+  let plugins_to_add = ["ValidGithubUserName/ValidPluginName", "ValidGithubUserName2/ValidPluginName2"]
+
+  call SUCHVim_addPlugins(plugins_to_add)
+
+  let actual = SUCHVim_getUserPlugins()
+  let expected = "Plug '".plugins_to_add[0]."'"
+  let expected2 = "Plug '".plugins_to_add[1]."'"
+  Assert expected == actual[0]
+  Assert expected2 == actual[1]

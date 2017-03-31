@@ -11,8 +11,6 @@ function! SUCHVim_addPlugins(plugins)
     endfor
 endfunction
 
-function! SUCHVim_loadUserPlugin()
-    for plugin_command in s:user_plugins
-        execute plugin_command
-    endfor
+function! SUCHVim_getUserPlugins()
+    return s:user_plugins
 endfunction
