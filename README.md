@@ -151,7 +151,7 @@ let mapleader = " "
 autocmd VimEnter * colorscheme solarized
             \| :AirlineTheme solarized
 
-" Add tour own set of plugins
+" Add your own set of plugins
 call SUCHVim_addPlugins(['altercation/vim-colors-solarized', 'othree/yajs.vim', 'nvie/vim-flake8'])`
 
 " Add your plugins dependencies here if you want them to be installed automatically
