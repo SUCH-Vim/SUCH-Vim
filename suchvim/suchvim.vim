@@ -11,7 +11,7 @@ source ~/.SUCH-Vim/suchvim/dependencies/pip_dependencies.vim
 " ----------------------------------------------------------------
 
 source ~/.SUCH-Vim/suchvim/utilities/command-executer.vim
-source ~/.SUCH-Vim/suchvim/utilities/show-doc.vim
+source ~/.SUCH-Vim/suchvim/utilities/show-help.vim
 
 " ----------------------------------------------------------------
 "  User command

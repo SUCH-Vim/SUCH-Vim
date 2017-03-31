@@ -30,3 +30,11 @@ source ~/.SUCH-Vim/common/config/languages/latex.vim
 
 source ~/.SUCH-Vim/common/config/environment/buffer.vim
 source ~/.SUCH-Vim/common/config/environment/spell-checker.vim
+
+
+call SUCHVim_execute_commands(g:remap_commands)
+for list in g:help_keybindings
+    for comment in list
+        echom comment
+    endfor
+endfor
