@@ -27,4 +27,3 @@ fi
 if ! [ -f ~/.suchvimrc ]; then
     cp ~/.SUCH-Vim/template/suchvimrc ~/.suchvimrc
 fi
-

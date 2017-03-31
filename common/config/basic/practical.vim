@@ -32,4 +32,4 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 
 au BufRead,BufNewFile *.vader set filetype=vim
 
-noremap <leader>h :call SUCHVim_show_help()<cr>
+noremap <leader>H :call SUCHVim_show_help()<cr>
