@@ -31,3 +31,4 @@ source ~/.SUCH-Vim/common/plugins/languages/html.vim
 source ~/.SUCH-Vim/common/plugins/languages/latex.vim
 source ~/.SUCH-Vim/common/plugins/languages/c.vim
 source ~/.SUCH-Vim/common/plugins/languages/markdown.vim
+source ~/.SUCH-Vim/common/plugins/languages/rust.vim
