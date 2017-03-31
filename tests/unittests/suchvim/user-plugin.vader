@@ -1,5 +1,5 @@
 Before (setUp):
-  source ~/.SUCH-Vim/suchvim/user-plugins.vim
+  source ~/.SUCH-Vim/suchvim/user-command/user-plugins.vim
 
 
 Execute (Given a plugin When add plugins Then the plugin is added):
