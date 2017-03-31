@@ -23,3 +23,8 @@ if [ $condition -eq 0 ] ; then
 else
     nvim -c "PlugInstall | :q | :q"
 fi
+# Install suchvimrc template if it doesn't exist
+if ! [ -f ~/.suchvimrc ]; then
+    cp ~/.SUCH-Vim/template/suchvimrc ~/.suchvimrc
+fi
+

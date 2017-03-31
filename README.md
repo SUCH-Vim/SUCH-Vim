@@ -128,6 +128,19 @@ Move to the above window:
 Toggle nerdtree : *`<Leader>tt`*
 
 Fuzzy search files : *`<Leader>ff`*
+
+View opened buffers and open one of them : *`<Leader>bb(wait and type a single number)<Enter>`*
+
+Go to buffer with number : *`<Leader>bg(enter a number)<Enter>`*
+
+Delete buffer with number : *`<Leader>bd(enter a number)d`*
+
+Create buffer : `<Leader>be (write the file name)<Enter>`
+
+Next buffer : *`<Leader>bn`*
+
+Previous buffer : *`<Leader>bp`*
+
 # Motions
 ### Cursor
 Jump to anywhere you want with minimal keystrokes, with just one key binding.
@@ -137,5 +150,6 @@ Search for a character with : *`<Leader>;{char}{label}`*.
 Search for n characters with : *`<Leader>ss{char}{char}...{char}<Enter>`*.
 
 You can also jump to a line with jk : *`<Leader>j{char}`* and  *`<Leader>k{char}`*.
+
 # Configuration
 You can define your own configuration in the file *~/.suchvimrc*.

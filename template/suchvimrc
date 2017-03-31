@@ -1,0 +1,7 @@
+let mapleader = " "
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+autocmd VimEnter * colorscheme base16-atelierheath
+            \| :AirlineTheme base16
+
+call SUCHVim_addPlugins(['altercation/vim-colors-solarized', 'chriskempson/base16-vim'])
