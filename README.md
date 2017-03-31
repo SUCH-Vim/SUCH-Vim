@@ -141,3 +141,19 @@ You can also jump to a line with jk : *`<Leader>j{char}`* and  *`<Leader>k{char}
 
 # Configuration
 You can define your own configuration in the file *~/.suchvimrc*.
+
+Here's an example: 
+```vimscript
+" Remap leader
+let mapleader = " "
+
+" Define colorscheme and airline theme
+autocmd VimEnter * colorscheme solarized
+            \| :AirlineTheme solarized
+
+" Add tour own set of plugins
+call SUCHVim_addPlugins(['altercation/vim-colors-solarized', 'othree/yajs.vim', 'nvie/vim-flake8'])`
+
+" Add your plugins dependencies here if you want them to be installed automatically
+autocmd FileType javascript call SUCHVim_check_npm_dependencies(['yajs'])
+autocmd FileType python call SUCHVim_check_pip_executable_dependencies(['flake8'])
