@@ -20,20 +20,39 @@ endfunction
 
 function! SUCHVim_show_help_tag(tag)
     let messages = s:get_message_from_tag(a:tag)
-    call s:show_help_windows(messages)
-    endfunction
+    call s:show_help_windows(a:tag, messages)
+endfunction
 
-function! s:show_help_windows(messages)
-    let winwidth = winwidth(0)
+function! s:show_help_windows(title, messages)
+    let line_number_width = 4
+    let winwidth = winwidth(0) - line_number_width
     let spacebetween = "   "
-    let max_length_command = s:get_max_length_command(a:messages, len(spacebetween) + 1)
+    let max_length_command = s:get_max_length_command(a:messages, len(spacebetween) + 1) + 1
     let number_of_commands_per_line = winwidth / max_length_command
     let number_of_lines = (len(a:messages) / number_of_commands_per_line) + 1
 
-    call s:create_suchhelp_split(number_of_lines)
+    call s:create_suchhelp_split(number_of_lines + 3)
 
     let current_commands_insert = 0
-    let current_line_number = 0
+
+    let current_index = 0
+    let delemiter = ""
+    while current_index != (winwidth/2 - len(a:title)/2 - 1)
+        let delemiter = delemiter." "
+        let current_index += 1
+    endwhile
+    
+    call setline(1,delemiter.toupper(a:title))
+
+    let delemiter = ""
+    let current_index = 0
+    while current_index != winwidth
+        let delemiter = delemiter."-"
+        let current_index += 1
+    endwhile
+    call setline(2,delemiter)
+
+    let current_line_number = 2
     let current_line_messate = ""
     for message in a:messages
         if current_commands_insert == number_of_commands_per_line
@@ -69,7 +88,7 @@ function! SUCHVim_show_help()
         let index = index + 1
     endfor
     call SUCHVim_execute_commands(vim_commands)
-    call s:show_help_windows(messages)
+    call s:show_help_windows("Menu", messages)
 endfunction
 
 function s:create_suchhelp_split(number_of_lines)
