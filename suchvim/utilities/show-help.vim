@@ -47,12 +47,13 @@ function! s:show_help_windows(title, messages)
     let delemiter = ""
     let current_index = 0
     while current_index != winwidth
-        let delemiter = delemiter."-"
+        let delemiter = delemiter."_"
         let current_index += 1
     endwhile
     call setline(2,delemiter)
+    call setline(3,"")
 
-    let current_line_number = 2
+    let current_line_number = 3
     let current_line_messate = ""
     for message in a:messages
         if current_commands_insert == number_of_commands_per_line
@@ -70,7 +71,6 @@ function! s:show_help_windows(title, messages)
         let current_commands_insert = current_commands_insert + 1
     endfor
     call setline(current_line_number+1, current_line_messate)
-
 endfunction
 
 " ----------------------------------------------------------------
@@ -121,7 +121,7 @@ function! s:add_documentation_and_keybindings(filetype, keys, comment, vim_comma
         call add(g:help_keybindings, [])
     endif
     let number_of_messages = len(g:help_keybindings[tag_index-1])+1 
-    let doc = "- ".a:keys." -> ".a:comment
+    let doc = "- ".a:keys." : ".a:comment
     call add(g:help_keybindings[tag_index-1], doc)
 endfunction
 
@@ -139,3 +139,10 @@ function! SUCHVim_add_motions_keybinding(keys, command, comment)
     let vim_command = "nnoremap ".a:keys." ".a:command
     call s:add_documentation_and_keybindings("motions", a:keys, a:comment, vim_command)
 endfunction
+
+autocmd FileType suchhelp syntax keyword suchmenuKeyword MENU - <leader> css 
+autocmd FileType suchhelp highlight link suchmenuKeyword Keyword
+autocmd FileType suchhelp highlight link suchmenuKeyword Fonction
+
+syntax keyword suchmenuKeyword MENU - 
+highlight link suchmenuKeyword Keyword

@@ -27,3 +27,15 @@ fi
 if ! [ -f ~/.suchvimrc ]; then
     cp ~/.SUCH-Vim/template/suchvimrc ~/.suchvimrc
 fi
+# Install syntax for suchhelp
+if ! [ -f ~/.vim/syntax ]; then
+    mkdir ~/.vim/syntax
+fi
+if [ $condition -eq 1 ] ; then
+    if ! [ -f ~/.config/nvim/syntax ]; then
+        mkdir ~/.config/nvim/syntax
+    fi
+    cp ~/.SUCH-Vim/suchvim/utilities/suchhelp.vim ~/.config/nvim/syntax/suchhelp.vim
+fi
+cp ~/.SUCH-Vim/suchvim/utilities/suchhelp.vim ~/.vim/syntax/suchhelp.vim
+
