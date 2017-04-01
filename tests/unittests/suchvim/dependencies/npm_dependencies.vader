@@ -47,28 +47,28 @@ Execute (Given not installed dependency and doesn't have npm When check Then mes
   Assert expected == npm_dependency_message
 
 Execute (Given installed dependency and has npm When check Then nothing):
-  let installed_depdendency = []
-  call add(not_installed_depdendency, "jslint")
-  call SUCHVim_set_not_installed_dependencies(installed_depdendency)
+  let installed_dependency = []
+  call add(installed_dependency, "jslint")
+  call SUCHVim_set_installed_dependencies(installed_dependency)
   call SUCHVim_set_check_dependency(1)
 
-  call SUCHVim_check_npm_dependencies(installed_depdendency)
+  call SUCHVim_check_npm_dependencies(installed_dependency)
 
   let expected = []
   let actual = SUCHVim_get_execute_dependency_commands()
-  Assert expected == actual
+  AssertEqual expected, actual
 
 Execute (Given installed dependency and doesn't have npm When check Then nothing):
-  let installed_depdendency = []
-  call add(not_installed_depdendency, "jslint")
-  call SUCHVim_set_not_installed_dependencies(installed_depdendency)
+  let installed_dependency = []
+  call add(installed_dependency, "jslint")
+  call SUCHVim_set_installed_dependencies(installed_dependency)
   call SUCHVim_set_check_dependency(0)
 
-  call SUCHVim_check_npm_dependencies(installed_depdendency)
+  call SUCHVim_check_npm_dependencies(installed_dependency)
   let npm_dependency_message = SUCHVim_get_echo_dependency_commands()
 
   let expected = ""
-  Assert expected == npm_dependency_message
+  AssertEqual expected, npm_dependency_message
 
 Execute (Given not installed dependencies and has npm When check Then commands are correct):
   let not_installed_depdendencies = []
