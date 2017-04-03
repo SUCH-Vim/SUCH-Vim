@@ -20,3 +20,4 @@ source ~/.SUCH-Vim/nvim/config/languages/latex.vim
 
 source ~/.SUCH-Vim/nvim/config/languages/go.vim
 source ~/.SUCH-Vim/nvim/config/languages/c.vim
+source ~/.SUCH-Vim/nvim/config/languages/rust.vim

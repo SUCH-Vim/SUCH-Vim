@@ -23,6 +23,7 @@ source ~/.SUCH-Vim/common/config/languages/html.vim
 source ~/.SUCH-Vim/common/config/languages/json.vim
 source ~/.SUCH-Vim/common/config/languages/c.vim
 source ~/.SUCH-Vim/common/config/languages/latex.vim
+source ~/.SUCH-Vim/common/config/languages/rust.vim
 
 " ----------------------------------------------------------------
 "  Include Environment
