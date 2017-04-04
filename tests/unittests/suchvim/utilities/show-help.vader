@@ -1,0 +1,7 @@
+Before (setUp):
+  source ~/.SUCH-Vim/suchvim/utilities/show-help.vim
+
+Execute (Test have program):
+  let actual = SUCHVim_check_dependency("vim")
+  let expected = 1
+  Assert expected == actual

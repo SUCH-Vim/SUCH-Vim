@@ -1,0 +1,35 @@
+Before (setUp):
+  source ~/.SUCH-Vim/suchvim/utilities/add-keybindings-and-comments.vim
+  let filetype = "python"
+  let filetype2 = "java"
+  let keys = "<leader>g"
+  let comments = "Go to position"
+  let vim_command = ":GoToDefinition()<cr>"
+
+Execute (Given filetype When add filetype keybindings Then filetype is added):
+  call SUCHVim_add_filetype_keybinding(filetype, "","","")
+  Assert filetype == g:help_tags[0]
+
+Execute (Given filetype When add filetype keybindings tow times Then filetype is added just once):
+  call SUCHVim_add_filetype_keybinding(filetype, "","","")
+  call SUCHVim_add_filetype_keybinding(filetype, "","","")
+  Assert filetype == g:help_tags[0]
+  Assert 1 == len(g:help_tags)
+
+Execute (Given two filetypes When add filetypes Then filetypes are added):
+  call SUCHVim_add_filetype_keybinding(filetype, "","","")
+  call SUCHVim_add_filetype_keybinding(filetype2, "","","")
+  Assert filetype == g:help_tags[0]
+  Assert filetype2 == g:help_tags[1]
+
+Execute (Given filetype, keys and comments When add filetype keybindings Then doc is valid):
+  call SUCHVim_add_filetype_keybinding(filetype, keys, "", comments)
+  Assert "- ".keys." : ".comments == g:help_keybindings[0][0]
+
+Execute (Given filetype, keys and vim command When add filetype keybindings Then remap is valid):
+  call SUCHVim_add_filetype_keybinding(filetype, keys, vim_command, "")
+  Assert "autocmd FileType ".filetype." nnoremap <buffer> ".keys." ".vim_command == g:remap_commands[0]
+
+Execute (Given filetype, keys and vim command When add filetype command Then remap is valid):
+  call SUCHVim_add_filetype_command(filetype, keys, vim_command, "")
+  Assert "autocmd FileType ".filetype." ".vim_command == g:remap_commands[0]
