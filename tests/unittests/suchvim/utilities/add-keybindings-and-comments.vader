@@ -22,9 +22,13 @@ Execute (Given two filetypes When add filetypes Then filetypes are added):
   Assert filetype == g:help_tags[0]
   Assert filetype2 == g:help_tags[1]
 
-Execute (Given filetype, keys and comments When add filetype keybindings Then doc is valid):
+Execute (Given filetype, keys and comments When add filetype keybindings Then key is valid):
   call SUCHVim_add_filetype_keybinding(filetype, keys, "", comments)
-  Assert "- ".keys." : ".comments == g:help_keybindings[0][0]
+  Assert "- ".keys == g:help_keybindings[0][0]
+
+Execute (Given filetype, keys and comments When add filetype keybindings Then comments is valid):
+  call SUCHVim_add_filetype_keybinding(filetype, keys, "", comments)
+  Assert comments == g:help_comments[0][0]
 
 Execute (Given filetype, keys and vim command When add filetype keybindings Then remap is valid):
   call SUCHVim_add_filetype_keybinding(filetype, keys, vim_command, "")
