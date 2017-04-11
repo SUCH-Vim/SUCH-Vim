@@ -8,13 +8,12 @@ syntax match suchOperation "\v-"
 syntax match suchDelimiter "\v_"
 
 syntax match suchArrow "\v→"
-syntax match suchKeyBinding "\v[a-zA-Z0-9\<\>]*  →" contains=suchArrow
+syntax match suchKeyBinding "\v[a-zA-Z0-9\<\>]*  → " contains=suchArrow
 
 
 highlight link suchmenuKeyword Bold
 highlight link suchDelimiter Bold 
 highlight link suchArrow Number
-highlight link suchKeyBinding Question
+highlight link suchKeyBinding Function
 highlight link suchOperation Number
 highlight link suchmenuNumber Number
-highlight link suchKeyComments Bold
