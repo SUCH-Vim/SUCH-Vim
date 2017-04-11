@@ -19,7 +19,7 @@ function! s:add_documentation_and_keybindings(filetype, keys, comment, vim_comma
         call add(g:help_comments, [])
     endif
     let number_of_messages = len(g:help_keybindings[tag_index-1])+1 
-    call add(g:help_keybindings[tag_index-1], "- ".a:keys)
+    call add(g:help_keybindings[tag_index-1]," ".a:keys)
     call add(g:help_comments[tag_index-1], a:comment)
 endfunction
 

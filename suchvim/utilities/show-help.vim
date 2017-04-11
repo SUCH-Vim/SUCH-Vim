@@ -65,11 +65,19 @@ function! s:show_help_windows(title, keys, comments)
     let line_number_width = 4
     let winwidth = winwidth(0) - line_number_width
     let spacebetween = " "
-    let separator = " : "
+    let separator = "  → "
     let max_length_keys = s:get_max_length_keys(a:keys)
-    let max_length_command = s:get_max_length_command(a:keys, a:comments, len(spacebetween) + len(separator), max_length_keys)
+    let max_length_command = s:get_max_length_command(a:keys, a:comments, len(spacebetween) + 3, max_length_keys)
     let number_of_commands_per_line = winwidth / max_length_command
     let number_of_lines = (len(a:keys) / number_of_commands_per_line) + 1
+
+    echom winwidth
+    echom spacebetween
+    echom separator
+    echom max_length_keys
+    echom max_length_command
+    echom number_of_commands_per_line
+    echom number_of_lines
 
     let number_of_lines_for_title = 3
     call s:create_suchhelp_split(number_of_lines + number_of_lines_for_title)
@@ -106,12 +114,12 @@ function! s:show_help_windows(title, keys, comments)
         while len(key_padding) != number_of_keys_padding
             let key_padding = key_padding." "
         endwhile
-        let number_of_padding = max_length_command - len(key) - len(a:comments[comments_index]) - len(separator) - number_of_keys_padding - len(spacebetween)
+        let number_of_padding = max_length_command - len(key) - len(a:comments[comments_index]) - 3 - number_of_keys_padding - len(spacebetween)
         let padding = ""
         while len(padding) != number_of_padding
             let padding = padding." "
         endwhile
-        let current_line_messate = current_line_messate.key.key_padding.separator.a:comments[comments_index].padding.spacebetween
+        let current_line_messate = current_line_messate.key_padding.key.separator.a:comments[comments_index].padding.spacebetween
         let current_commands_insert = current_commands_insert + 1
         let comments_index = comments_index + 1
     endfor
