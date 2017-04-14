@@ -86,19 +86,19 @@ function! s:show_help_windows(title, keys, comments)
     call s:create_suchhelp_split(number_of_lines + number_of_lines_for_title)
     let current_commands_insert = 0
     let current_index = 0
-    let delemiter = ""
+    let delimiter = ""
     while current_index != (winwidth/2 - len(a:title)/2 - 1)
-        let delemiter = delemiter." "
+        let delimiter = delimiter." "
         let current_index += 1
     endwhile
-    call setline(1, delemiter.toupper(a:title))
-    let delemiter = ""
+    call setline(1, delimiter.toupper(a:title))
+    let delimiter = ""
     let current_index = 0
     while current_index != winwidth
-        let delemiter = delemiter."_"
+        let delimiter = delimiter."_"
         let current_index += 1
     endwhile
-    call setline(2, delemiter)
+    call setline(2, delimiter)
     call setline(3, "")
 
     let current_line_number = number_of_lines_for_title
