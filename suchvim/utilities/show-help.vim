@@ -3,9 +3,6 @@
 " ----------------------------------------------------------------
 
 function! SUCHVim_show_help_filetype()
-    let my_filetype = &filetype
-    echom my_filetype
-    call SUCHVim_show_help_tag(my_filetype)
 endfunction
 
 function! SUCHVim_show_help()
@@ -143,13 +140,19 @@ function s:create_suchhelp_split(number_of_lines)
     setlocal buftype=nofile
 endfunction
 
-function! s:verify_tag_buffer(tag)
+function! SUCHVim_toggle_help_filetype()
     if bufwinnr("__SUCH_HELP__") > 0
         bdelete __SUCH_HELP__
-        return -1
+    else
+        let my_filetype = &filetype
+        call SUCHVim_show_help_tag(my_filetype)
     endif
+endfunction
+
+function! s:verify_tag_buffer(tag)
     if index(g:help_tags, a:tag) == -1
         echo "This filetype has no documentation." 
         return -1
     endif
+    return 0
 endfunction
