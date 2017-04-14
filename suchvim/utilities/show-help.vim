@@ -2,15 +2,25 @@
 "  Show help menu
 " ----------------------------------------------------------------
 
+function! SUCHVim_show_help_filetype()
+    let my_filetype = &filetype
+    echom my_filetype
+    call SUCHVim_show_help_tag(my_filetype)
+endfunction
+
 function! SUCHVim_show_help()
     let messages = []
     let index = 1
     let vim_commands = []
     let patch = []
     for tag in g:help_tags
-        call add(patch, index." ")
+        let index_format = "0".index
+        if index > 9
+            let index_format = index
+        endif
+        call add(patch, index_format." ")
         call add(messages, tag)
-        let vim_command = "autocmd FileType suchhelp nnoremap <buffer> ".index." :call SUCHVim_show_help_tag(\"".tag."\")<cr>"
+        let vim_command = "autocmd FileType suchhelp nnoremap <buffer> ".index_format." :call SUCHVim_show_help_tag(\"".tag."\")<cr>"
         call add(vim_commands, vim_command)
         let index = index + 1
     endfor
@@ -56,9 +66,12 @@ function! s:get_keys_from_tag(tag)
 endfunction
 
 function! SUCHVim_show_help_tag(tag)
-    let comments = s:get_comments_from_tag(a:tag)
-    let keys = s:get_keys_from_tag(a:tag)
-    call s:show_help_windows(a:tag, keys, comments)
+    let open = s:verify_tag_buffer(a:tag)
+    if open != -1
+        let comments = s:get_comments_from_tag(a:tag)
+        let keys = s:get_keys_from_tag(a:tag)
+        call s:show_help_windows(a:tag, keys, comments)
+    endif
 endfunction
 
 function! s:show_help_windows(title, keys, comments)
@@ -71,14 +84,6 @@ function! s:show_help_windows(title, keys, comments)
     let max_length_command = s:get_max_length_command(a:keys, a:comments, len(spacebetween) + spacebetween_caracter_number , max_length_keys)
     let number_of_commands_per_line = winwidth / max_length_command
     let number_of_lines = (len(a:keys) / number_of_commands_per_line) + 1
-
-    echom winwidth
-    echom spacebetween
-    echom separator
-    echom max_length_keys
-    echom max_length_command
-    echom number_of_commands_per_line
-    echom number_of_lines
 
     let number_of_lines_for_title = 3
     call s:create_suchhelp_split(number_of_lines + number_of_lines_for_title)
@@ -136,4 +141,15 @@ function s:create_suchhelp_split(number_of_lines)
     normal! ggdG
     setlocal filetype=suchhelp
     setlocal buftype=nofile
+endfunction
+
+function! s:verify_tag_buffer(tag)
+    if bufwinnr("__SUCH_HELP__") > 0
+        bdelete __SUCH_HELP__
+        return -1
+    endif
+    if index(g:help_tags, a:tag) == -1
+        echo "This filetype has no documentation." 
+        return -1
+    endif
 endfunction

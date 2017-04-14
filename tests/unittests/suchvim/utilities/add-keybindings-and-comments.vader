@@ -19,12 +19,13 @@ Execute (Given filetype When add filetype keybindings tow times Then filetype is
 Execute (Given two filetypes When add filetypes Then filetypes are added):
   call SUCHVim_add_filetype_keybinding(filetype, "","","")
   call SUCHVim_add_filetype_keybinding(filetype2, "","","")
+
   Assert filetype == g:help_tags[0]
   Assert filetype2 == g:help_tags[1]
 
 Execute (Given filetype, keys and comments When add filetype keybindings Then key is valid):
   call SUCHVim_add_filetype_keybinding(filetype, keys, "", comments)
-  Assert "- ".keys == g:help_keybindings[0][0]
+  Assert " ".keys == g:help_keybindings[0][0]
 
 Execute (Given filetype, keys and comments When add filetype keybindings Then comments is valid):
   call SUCHVim_add_filetype_keybinding(filetype, keys, "", comments)
