@@ -1,5 +1,8 @@
-autocmd FileType rust noremap <buffer> <leader>f :RustFmt<cr>
-autocmd FileType rust noremap <buffer> <leader>R :RustRun<cr>
+"autocmd FileType rust noremap <buffer> <leader>f :RustFmt<cr>
+"autocmd FileType rust noremap <buffer> <leader>R :RustRun<cr>
+
+call SUCHVim_add_filetype_keybinding("rust", "<leader>f", ":RustFmt<cr>", "Reformat file")
+call SUCHVim_add_filetype_keybinding("rust", "<leader>R", ":RustRun<cr>", "Run")
 
 let g:rustfmt_autosave = 1
 " This is a little workaround to use Cargo to check syntax instead of rustc while

@@ -8,16 +8,15 @@ nnoremap <leader>wr<Left> :vertical resize -5<Enter>
 nnoremap <leader>wml <C-w>L 
 nnoremap <leader>wm<Right> <C-w>L
 
-call SUCHVim_add_motions_keybinding("<leader>wl", "<C-w>l", "move to right pane")
-call SUCHVim_add_motions_keybinding("<leader>wh", "<C-w>h", "move to left pane")
-call SUCHVim_add_motions_keybinding("<leader>wj", "<C-w>j", "move to bottom pane")
-call SUCHVim_add_motions_keybinding("<leader>wk", "<C-w>k","move to top pane")
+call SUCHVim_add_categories_keybinding("windows", "<leader>wl", "<C-w>l", "move to right pane")
+call SUCHVim_add_categories_keybinding("windows", "<leader>wh", "<C-w>h", "move to left pane")
+call SUCHVim_add_categories_keybinding("windows", "<leader>wj", "<C-w>j", "move to bottom pane")
+call SUCHVim_add_categories_keybinding("windows", "<leader>wk", "<C-w>k","move to top pane")
 
-call SUCHVim_add_motions_keybinding("<leader>w<Right>", "<C-w>l", "move to right pane")
-call SUCHVim_add_motions_keybinding("<leader>w<Left>", "<C-w>h", "move to left pane")
-call SUCHVim_add_motions_keybinding("<leader>w<Down>", "<C-w>j", "move to bottom pane")
-call SUCHVim_add_motions_keybinding("<leader>w<Up>", "<C-w>k", "move to top pane")
+call SUCHVim_add_categories_keybinding("windows", "<leader>w<Right>", "<C-w>l", "move to right pane")
+call SUCHVim_add_categories_keybinding("windows", "<leader>w<Left>", "<C-w>h", "move to left pane")
+call SUCHVim_add_categories_keybinding("windows", "<leader>w<Down>", "<C-w>j", "move to bottom pane")
+call SUCHVim_add_categories_keybinding("windows", "<leader>w<Up>", "<C-w>k", "move to top pane")
 
-call SUCHVim_add_motions_keybinding("<leader>wv", "<C-w>v", "split vertical")
-call SUCHVim_add_motions_keybinding("<leader>wb", "<C-w>S", "split horizontal")
-
+call SUCHVim_add_categories_keybinding("windows", "<leader>wv", "<C-w>v", "split vertical")
+call SUCHVim_add_categories_keybinding("windows", "<leader>wb", "<C-w>S", "split horizontal")

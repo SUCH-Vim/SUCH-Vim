@@ -33,7 +33,7 @@ function! SUCHVim_add_filetype_command(filetype, keys, command, comment)
     call s:add_documentation_and_keybindings(a:filetype, a:keys, a:comment, vim_command)
 endfunction
 
-function! SUCHVim_add_motions_keybinding(keys, command, comment)
+function! SUCHVim_add_categories_keybinding(category, keys, command, comment)
     let vim_command = "nnoremap ".a:keys." ".a:command
-    call s:add_documentation_and_keybindings("motions", a:keys, a:comment, vim_command)
+    call s:add_documentation_and_keybindings(a:category, a:keys, a:comment, vim_command)
 endfunction
