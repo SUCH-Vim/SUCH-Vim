@@ -1,0 +1,125 @@
+Before (setUp):
+  let SUCHVim_cargo_path = $HOME."/.vim/SUCH-Vim/dependencies/cargo/"
+  source ~/.SUCH-Vim/tests/unittests/suchvim/dependencies/mocks/dependencies.vim
+  source ~/.SUCH-Vim/suchvim/dependencies/cargo_dependencies.vim
+
+  let dependency_name = "rustfmt"
+  let other_dependency_name = "cargo-watch"
+  let installed_dependency_name = "cargo-multi"
+
+  let not_installed_dependency = []
+  call add(not_installed_dependency, dependency_name)
+
+  let not_installed_dependencies = []
+  call add(not_installed_dependencies, dependency_name)
+  call add(not_installed_dependencies, other_dependency_name)
+  
+  let installed_dependency = []
+  call add(installed_dependency, installed_dependency_name)
+  
+  let dependencies = []
+  call add(dependencies, dependency_name)
+  call add(dependencies, other_dependency_name)
+  call add(dependencies, installed_dependency_name)
+  
+  let installed_dependencies = []
+  call add(installed_dependencies, installed_dependency_name)
+
+Execute (Given not installed dependency When install Then command is correct):
+  let dependency_commands = SUCHVim_install_cargo_dependencies(not_installed_dependency)
+
+  let expected = "!cargo install --root ".SUCHVim_cargo_path." ".dependency_name
+  Assert expected == dependency_commands[0]
+
+Execute (Given not installed dependency When echo Then message is correct):
+  let dependency_message = SUCHVim_echo_cargo_dependencies(not_installed_dependency)
+
+  let expected = "There are missing dependencies [ ".dependency_name." ], install cargo or install them manualy."
+  Assert expected == dependency_message
+
+Execute (Given not installed dependency and has cargo When check Then command is correct):
+  call SUCHVim_set_not_installed_dependencies(not_installed_dependency)
+  call SUCHVim_set_check_dependency(1)
+
+  call SUCHVim_check_cargo_dependencies(not_installed_dependency)
+
+  let expected = []
+  call add(expected, "!cargo install --root ".SUCHVim_cargo_path." ".dependency_name)
+  let actual = SUCHVim_get_execute_dependency_commands()
+  Assert expected == actual
+
+Execute (Given not installed dependency and doesn't have cargo When check Then message is correct):
+  call SUCHVim_set_not_installed_dependencies(not_installed_dependency)
+  call SUCHVim_set_check_dependency(0)
+
+  call SUCHVim_check_cargo_dependencies(not_installed_dependency)
+  let dependency_message = SUCHVim_get_echo_dependency_commands()
+
+  let expected = "There are missing dependencies [ ".dependency_name." ], install cargo or install them manualy."
+  Assert expected == dependency_message
+
+Execute (Given installed dependency and has cargo When check Then nothing):
+  call SUCHVim_set_installed_dependencies(installed_dependency)
+  call SUCHVim_set_check_dependency(1)
+
+  call SUCHVim_check_cargo_dependencies(installed_dependency)
+
+  let expected = []
+  let actual = SUCHVim_get_execute_dependency_commands()
+  AssertEqual expected, actual
+
+Execute (Given installed dependency and doesn't have cargo When check Then nothing):
+  call SUCHVim_set_installed_dependencies(installed_dependency)
+  call SUCHVim_set_check_dependency(0)
+
+  call SUCHVim_check_cargo_dependencies(installed_dependency)
+  let dependency_message = SUCHVim_get_echo_dependency_commands()
+
+  let expected = ""
+  AssertEqual expected, dependency_message
+
+Execute (Given not installed dependencies and has npm When check Then commands are correct):
+  call SUCHVim_set_not_installed_dependencies(not_installed_dependencies)
+  call SUCHVim_set_check_dependency(1)
+
+  call SUCHVim_check_cargo_dependencies(not_installed_dependencies)
+
+  let expected = []
+  call add(expected, "!cargo install --root ".SUCHVim_cargo_path." ".dependency_name)
+  call add(expected, "!cargo install --root ".SUCHVim_cargo_path." ".other_dependency_name)
+  let actual = SUCHVim_get_execute_dependency_commands()
+  Assert expected == actual
+
+Execute (Given not installed dependencies and doesn't have cargo When check Then message is correct):
+  call SUCHVim_set_not_installed_dependencies(not_installed_dependencies)
+  call SUCHVim_set_check_dependency(0)
+
+  call SUCHVim_check_cargo_dependencies(not_installed_dependencies)
+  let dependency_message = SUCHVim_get_echo_dependency_commands()
+
+  let expected = "There are missing dependencies [ ".dependency_name." ".other_dependency_name." ], install cargo or install them manualy."
+  Assert expected == dependency_message
+
+Execute (Given mix dependencies and has cargo When check Then commands are correct):
+  call SUCHVim_set_not_installed_dependencies(not_installed_dependencies)
+  call SUCHVim_set_installed_dependencies(installed_dependencies)
+  call SUCHVim_set_check_dependency(1)
+
+  call SUCHVim_check_cargo_dependencies(dependencies)
+
+  let expected = []
+  call add(expected, "!cargo install --root ".SUCHVim_cargo_path." ".dependency_name)
+  call add(expected, "!cargo install --root ".SUCHVim_cargo_path." ".other_dependency_name)
+  let actual = SUCHVim_get_execute_dependency_commands()
+  Assert expected == actual
+
+Execute (Given mix dependencies and doesn't have cargo When check Then message is correct):
+  call SUCHVim_set_not_installed_dependencies(not_installed_dependencies)
+  call SUCHVim_set_installed_dependencies(installed_dependencies)
+  call SUCHVim_set_check_dependency(0)
+
+  call SUCHVim_check_cargo_dependencies(dependencies)
+  let dependency_message = SUCHVim_get_echo_dependency_commands()
+
+  let expected = "There are missing dependencies [ ".dependency_name." ".other_dependency_name." ], install cargo or install them manualy."
+  Assert expected == dependency_message

@@ -1,10 +1,8 @@
-<h1>SUCH-Vim</h1>
-<h4>A Super User's Configuration for Handling Vim<h4>
-
+# SUCH-Vim
+#### A Super User's Configuration for Handling Vim
 [![Build Status](https://travis-ci.org/nasim80/SUCH-Vim.svg?branch=master)](https://travis-ci.org/SUCH-Vim/SUCH-Vim)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-3.0/)
-
 # Goal
 The goal is to have a stable, clean, intuitive configuration of vim.
 To do that, we try to have the same key binding in each languages for similar features.
@@ -20,15 +18,14 @@ You can check all keybindings with SUCH-Help `<leader>H` or `<leader><leader>` f
 |Go to definition|`<leader>g`|
 |Show documentation|`<leader>d`|
 |Auto formatting|on write|
+
+We also developed a dependencies control so the user don't have to install manually the `npm`, `pip` and `cargo` packages required by our plugins' selection.
+Those dependencies are installed automatically in `.vim/SUCH-Vim/dependencies/`
 # Installation
 You can develop in your cloned Git repository's directory and execute the ./install.sh in order to apply changes to your config. A backup of your last config will be created in the $HOME/.vimrc_old file.
 
-The first time you open vim, you have to call Vim-Plug with *`:PlugInstall`* in order to install all the plugins.
 # Languages
 ### Markdown
-In order to have all the features, you have to install instant-markdown-d
-*`npm -g install instant-markdown-d`*
-
 |Feature|Status|
 |---|---|
 |Folding|&#10004;|
@@ -36,10 +33,8 @@ In order to have all the features, you have to install instant-markdown-d
 |Auto formatting|&#10060;|
 |Syntax checking|&#10060;|
 ### Python
-In order to have all the features, you have to install jedi, yapf and pylint.
-*`pip install jedi`*, *`pip install yapf`* and *`pip install pylint`*
-
-If you want to use neovim: `pip install neovim`
+We use `yapf` to check the syntax of your python project. It is automatically
+installed for you but you still have to provide your own `~/.style.yapf` file to configure it.
 
 |Feature|Status|
 |---|---|
@@ -108,9 +103,20 @@ Clang-Check uses Compilation database (https://clang.llvm.org/docs/JSONCompilati
 
 You can format a paragraph by selecting it and use the `<leader>f`.
 Ex: Put your cursor at the begining of the paragraph and do `*line number of paragraph*<leader>f`
+### Rust
+We use `rustfmt` to format your project and `cargo` itself to check the syntax. `rustfmt` is automatically
+installed for you but you still have to provide your own `rustfmt.toml` file at the root of your project to configure it.
+|Feature|Status|
+|---|---|
+|Build|&#10060;|
+|Run|&#10004;|
+|Completions|&#10004;|
+|Rename|&#10060;|
+|Go to definition|&#10060;|
+|Show documentation|&#10060;|
+|Auto formatting|&#10004;|
 
 # Windows
-
 Move to the right window:
 `<Leader>wl`
 `<Leader>w<Right>` 
@@ -156,3 +162,19 @@ You can also jump to a line with jk : *`<Leader>j{char}`* and  *`<Leader>k{char}
 
 # Configuration
 You can define your own configuration in the file *~/.suchvimrc*.
+
+Here's an example: 
+```vimscript
+" Remap leader
+let mapleader = " "
+
+" Define colorscheme and airline theme
+autocmd VimEnter * colorscheme solarized
+            \| :AirlineTheme solarized
+
+" Add your own set of plugins
+call SUCHVim_addPlugins(['altercation/vim-colors-solarized', 'othree/yajs.vim', 'nvie/vim-flake8'])`
+
+" Add your plugins dependencies here if you want them to be installed automatically
+autocmd FileType javascript call SUCHVim_check_npm_dependencies(['yajs'])
+autocmd FileType python call SUCHVim_check_pip_executable_dependencies(['flake8'])
