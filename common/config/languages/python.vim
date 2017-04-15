@@ -19,10 +19,10 @@ autocmd FileType python autocmd BufWritePre <buffer> call SUCHVim_format_python(
 "  Dependencies control
 " ----------------------------------------------------------------
 
-let python_pip_module_dependencies = [ 'jedi', ]
-let python_pip_executable_dependencies = [ 'yapf' , 'pylint']
-autocmd FileType python call SUCHVim_check_pip_executable_dependencies(python_pip_executable_dependencies)
-autocmd FileType python call SUCHVim_check_pip_module_dependencies(python_pip_module_dependencies)
+let s:python_pip_module_dependencies = [ 'jedi', ]
+let s:python_pip_executable_dependencies = [ 'yapf' , 'pylint']
+autocmd FileType python call SUCHVim_check_pip_executable_dependencies(s:python_pip_executable_dependencies)
+autocmd FileType python call SUCHVim_check_pip_module_dependencies(s:python_pip_module_dependencies)
 
 function! SUCHVim_format_python()
     let current_cursor = getpos(".")
