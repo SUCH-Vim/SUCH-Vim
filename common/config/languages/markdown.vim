@@ -15,5 +15,5 @@ let g:vim_markdown_no_default_key_mappings = 1
 "  Dependencies control
 " ----------------------------------------------------------------
 
-let dependencies = [ 'instant-markdown-d' ]
-autocmd FileType markdown call SUCHVim_check_npm_dependencies(dependencies)
+let s:dependencies = [ 'instant-markdown-d' ]
+autocmd FileType markdown call SUCHVim_check_npm_dependencies(s:dependencies)

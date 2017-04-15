@@ -11,5 +11,5 @@ let g:editorconfig_Beautifier = "~/.SUCH-Vim/common/config/languages/js-beautify
 "  Dependencies control
 " ----------------------------------------------------------------
 
-let dependencies = [ 'tern', 'eslint' ]
-autocmd FileType javascript call SUCHVim_check_npm_dependencies(dependencies)
+let s:dependencies = [ 'tern', 'eslint' ]
+autocmd FileType javascript call SUCHVim_check_npm_dependencies(s:dependencies)
