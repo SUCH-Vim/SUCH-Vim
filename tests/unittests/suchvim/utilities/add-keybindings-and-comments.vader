@@ -10,7 +10,7 @@ Execute (Given filetype When add filetype keybindings Then filetype is added):
   call SUCHVim_add_filetype_keybinding(filetype, "","","")
   Assert filetype == g:help_tags[0]
 
-Execute (Given filetype When add filetype keybindings tow times Then filetype is added just once):
+Execute (Given filetype When add filetype keybindings two times Then filetype is added just once):
   call SUCHVim_add_filetype_keybinding(filetype, "","","")
   call SUCHVim_add_filetype_keybinding(filetype, "","","")
   Assert filetype == g:help_tags[0]
