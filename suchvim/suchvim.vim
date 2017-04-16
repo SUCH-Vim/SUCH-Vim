@@ -12,6 +12,8 @@ source ~/.SUCH-Vim/suchvim/dependencies/cargo_dependencies.vim
 " ----------------------------------------------------------------
 
 source ~/.SUCH-Vim/suchvim/utilities/command-executer.vim
+source ~/.SUCH-Vim/suchvim/utilities/add-keybindings-and-comments.vim
+source ~/.SUCH-Vim/suchvim/utilities/show-help.vim
 
 " ----------------------------------------------------------------
 "  User command

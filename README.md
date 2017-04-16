@@ -7,6 +7,8 @@
 The goal is to have a stable, clean, intuitive configuration of vim.
 To do that, we try to have the same key binding in each languages for similar features.
 
+You can check all keybindings with SUCH-Help `<leader>H` or `<leader><leader>` for current buffer keybinding.
+
 |Feature|Keybinding|
 |---|---|
 |Build|`<leader>b`|

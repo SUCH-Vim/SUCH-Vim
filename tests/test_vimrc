@@ -3,7 +3,6 @@
 " ----------------------------------------------------------------
 
 let mapleader = " "
-source ~/.SUCH-Vim/common/config/motions/windows.vim
 
 " ----------------------------------------------------------------
 "  Vader framework for testing

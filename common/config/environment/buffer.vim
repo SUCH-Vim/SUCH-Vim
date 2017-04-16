@@ -7,7 +7,6 @@ autocmd bufenter * if (bufname("%") == "NERD_tree_1")
             \| call g:NERDTree.ForCurrentTab().getRoot().refresh() 
             \| call g:NERDTree.ForCurrentTab().render() 
             \| endif
-nnoremap <leader>tt :NERDTreeToggle<CR>
 
 " ----------------------------------------------------------------
 "  Ctrlp Setup
@@ -41,11 +40,11 @@ function! DeleteBuffer()
   execute vim_command
 endfunction
 
-nnoremap <Leader>bg :call GoToBuffer()<CR>
-nnoremap <Leader>bd :call DeleteBuffer()<CR>
+call SUCHVim_add_categories_keybinding("buffers", "<leader>bg", ":call GoToBuffer()<cr>", "Go to buffer")
+call SUCHVim_add_categories_keybinding("buffers", "<leader>bd", ":call DeleteBuffer()<cr>", "Delete buffer")
+call SUCHVim_add_categories_keybinding("buffers", "<leader>bb", ":buffers<CR>:buffer<Space>", "List buffers")
+call SUCHVim_add_categories_keybinding("buffers", "<leader>be", ":e<Space>", "Create buffer")
+call SUCHVim_add_categories_keybinding("buffers", "<leader>bn", ":bn<CR>", "Next buffer")
+call SUCHVim_add_categories_keybinding("buffers", "<leader>bp", ":bn<CR>", "Previous buffer")
 
-nnoremap <Leader>bb :buffers<CR>:buffer<Space>
-nnoremap <Leader>be :e<Space>
-
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>bp :bp<CR>
+call SUCHVim_add_categories_keybinding("buffers", "<leader>tt", ":NERDTreeToggle<CR>", "Toggle NERDTree")

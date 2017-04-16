@@ -31,3 +31,5 @@ source ~/.SUCH-Vim/common/config/languages/rust.vim
 
 source ~/.SUCH-Vim/common/config/environment/buffer.vim
 source ~/.SUCH-Vim/common/config/environment/spell-checker.vim
+
+call SUCHVim_execute_commands(g:remap_commands)

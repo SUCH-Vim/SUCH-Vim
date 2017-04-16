@@ -11,6 +11,6 @@ let g:vimtex_latexmk_continuous=0
 :   VimtexView
 :endfunction
 
-autocmd FileType tex noremap <buffer> <leader>f gq<Enter>
-autocmd FileType tex noremap <buffer> <leader>R :call BuildAndView()<cr>
-autocmd FileType tex noremap <buffer> <leader>b :VimtexCompile<cr>
+call SUCHVim_add_filetype_keybinding("tex", "<leader>f", "gq<Enter>", "Reformat equation")
+call SUCHVim_add_filetype_keybinding("tex", "<leader>R", ":call BuildAndView()<cr>", "Build and view")
+call SUCHVim_add_filetype_keybinding("tex", "<leader>b", ":VimtexCompile()<cr>", "Build")

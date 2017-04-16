@@ -2,17 +2,18 @@
 "  Jedi config
 " ----------------------------------------------------------------
   
-autocmd FileType python let g:jedi#goto_definitions_command = "<leader>g"
-autocmd FileType python let g:jedi#documentation_command = "<leader>d"
-autocmd FileType python let g:jedi#usages_command = "<leader>n"
-autocmd FileType python let g:jedi#rename_command = "<leader>r"
 autocmd FileType python let g:jedi#force_py_version = 3
+
+call SUCHVim_add_filetype_command("python", "<leader>r", "let g:jedi#rename_command = \"<leader>r\"", "Rename")
+call SUCHVim_add_filetype_command("python", "<leader>n", "let g:jedi#usages_command = \"<leader>n\"", "Usage")
+call SUCHVim_add_filetype_command("python", "<leader>d", "let g:jedi#documentation_command = \"<leader>d\"", "Show doc")
+call SUCHVim_add_filetype_command("python", "<leader>g", "let g:jedi#goto_definitions_command = \"<leader>g\"", "Go to definition")
 
 " ----------------------------------------------------------------
 "  Yapf config
 " ----------------------------------------------------------------
 
-autocmd FileType python nnoremap <buffer> <leader>f call SUCHVim_format_python()
+call SUCHVim_add_filetype_keybinding("python", "<leader>f", ":call SUCHVim_format_python()", "Format file")
 autocmd FileType python autocmd BufWritePre <buffer> call SUCHVim_format_python()
 
 " ----------------------------------------------------------------

@@ -12,3 +12,4 @@ function! SUCHVim_format_c()
     call setpos('.', current_cursor) 
 endfunction
 
+call SUCHVim_add_filetype_keybinding("c", "<leader>f", ":call SUCHVim_format_c()<cr>", "Reformat file")
