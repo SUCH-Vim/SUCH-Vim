@@ -47,4 +47,4 @@ call SUCHVim_add_categories_keybinding("buffers", "<leader>be", ":e<Space>", "Cr
 call SUCHVim_add_categories_keybinding("buffers", "<leader>bn", ":bn<CR>", "Next buffer")
 call SUCHVim_add_categories_keybinding("buffers", "<leader>bp", ":bn<CR>", "Previous buffer")
 
-call SUCHVim_add_categories_keybinding("buffers", "<leader>tt", ":NERDTreeToggle<CR>", "Toggle NERDTree")
+call SUCHVim_add_categories_keybinding("buffers", "<leader>bt", ":NERDTreeToggle<CR>", "Toggle NERDTree")
