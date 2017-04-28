@@ -20,3 +20,10 @@ call SUCHVim_add_categories_keybinding("windows", "<leader>w<Up>", "<C-w>k", "mo
 
 call SUCHVim_add_categories_keybinding("windows", "<leader>wv", "<C-w>v", "split vertical")
 call SUCHVim_add_categories_keybinding("windows", "<leader>wb", "<C-w>S", "split horizontal")
+
+call SUCHVim_add_categories_keybinding("tabs", "<leader>tl", ":tabnext<cr>", "next tab")
+call SUCHVim_add_categories_keybinding("tabs", "<leader>th", ":tabprev<cr>", "prev tab")
+call SUCHVim_add_categories_keybinding("tabs", "<leader>tk", ":tabbext<cr>", "next tab")
+call SUCHVim_add_categories_keybinding("tabs", "<leader>tj", ":tabprev<cr>", "prev tab")
+call SUCHVim_add_categories_keybinding("tabs", "<leader>tn", ":tabnew<cr>", "create new tab")
+call SUCHVim_add_categories_keybinding("tabs", "<leader>tc", ":tabclose<cr>", "close tab")
