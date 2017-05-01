@@ -105,7 +105,8 @@ You can format a paragraph by selecting it and use the `<leader>f`.
 Ex: Put your cursor at the begining of the paragraph and do `*line number of paragraph*<leader>f`
 ### Rust
 We use `rustfmt` to format your project and `cargo` itself to check the syntax. `rustfmt` is automatically
-installed for you but you still have to provide your own `rustfmt.toml` file at the root of your project to configure it.
+installed for you but you still have to provide your own `rustfmt.toml` file at the root of your project to configure it.  
+
 |Feature|Status|
 |---|---|
 |Build|&#10060;|
