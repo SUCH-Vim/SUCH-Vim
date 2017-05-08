@@ -44,7 +44,9 @@ call SUCHVim_add_categories_keybinding("buffers", "<leader>bg", ":call GoToBuffe
 call SUCHVim_add_categories_keybinding("buffers", "<leader>bd", ":call DeleteBuffer()<cr>", "Delete buffer")
 call SUCHVim_add_categories_keybinding("buffers", "<leader>bb", ":buffers<CR>:buffer<Space>", "List buffers")
 call SUCHVim_add_categories_keybinding("buffers", "<leader>be", ":e<Space>", "Create buffer")
-call SUCHVim_add_categories_keybinding("buffers", "<leader>bn", ":bn<CR>", "Next buffer")
-call SUCHVim_add_categories_keybinding("buffers", "<leader>bp", ":bn<CR>", "Previous buffer")
+call SUCHVim_add_categories_keybinding("buffers", "<leader>bl", ":bn<CR>", "Next buffer")
+call SUCHVim_add_categories_keybinding("buffers", "<leader>bk", ":bn<CR>", "Next buffer")
+call SUCHVim_add_categories_keybinding("buffers", "<leader>bh", ":bp<CR>", "Previous buffer")
+call SUCHVim_add_categories_keybinding("buffers", "<leader>bj", ":bp<CR>", "Previous buffer")
 
 call SUCHVim_add_categories_keybinding("buffers", "<leader>bt", ":NERDTreeToggle<CR>", "Toggle NERDTree")
