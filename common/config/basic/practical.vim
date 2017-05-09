@@ -40,6 +40,6 @@ map <leader><leader> :call SUCHVim_toggle_help_filetype()<cr>
 "  Snippets 
 " ----------------------------------------------------------------
 
-let g:UltiSnipsExpandTrigger="<Enter>"
+let g:UltiSnipsExpandTrigger="<s-tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
