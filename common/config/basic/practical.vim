@@ -35,3 +35,11 @@ au BufRead,BufNewFile *.vader set filetype=vim
 
 map <leader>H :call SUCHVim_show_help()<cr>
 map <leader><leader> :call SUCHVim_toggle_help_filetype()<cr>
+
+" ----------------------------------------------------------------
+"  Snippets 
+" ----------------------------------------------------------------
+
+let g:UltiSnipsExpandTrigger="<Enter>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
