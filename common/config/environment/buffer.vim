@@ -40,8 +40,13 @@ function! DeleteBuffer()
   execute vim_command
 endfunction
 
+function! DeleteAllBuffers()
+    execute "%bd | e#"
+endfunction
+
 call SUCHVim_add_categories_keybinding("buffers", "<leader>bg", ":call GoToBuffer()<cr>", "Go to buffer")
 call SUCHVim_add_categories_keybinding("buffers", "<leader>bd", ":call DeleteBuffer()<cr>", "Delete buffer")
+call SUCHVim_add_categories_keybinding("buffers", "<leader>bD", ":call DeleteAllBuffers()<cr>", "Delete all buffers")
 call SUCHVim_add_categories_keybinding("buffers", "<leader>bb", ":buffers<CR>:buffer<Space>", "List buffers")
 call SUCHVim_add_categories_keybinding("buffers", "<leader>be", ":e<Space>", "Create buffer")
 call SUCHVim_add_categories_keybinding("buffers", "<leader>bl", ":bn<CR>", "Next buffer")
